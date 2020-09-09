@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_BANK_H
-#define PROJET_BANK_H
+#ifndef PROJECT_BANK_H
+#define PROJECT_BANK_H
 
 #include "Cashier.h"
 #include "Queue.h"
@@ -12,8 +12,8 @@ class Bank{
 private:
     int cashiersCount;
     int clientsCount;
-    Cashier[] cashiers;
-    Queue queue;
+    Cashier ** cashiers;
+    Queue * queue;
 
 public:
     Bank(double averageServiceTime, int cashiersCount);

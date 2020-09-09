@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_ARRIVAL_H
-#define PROJET_ARRIVAL_H
+#ifndef PROJECT_ARRIVAL_H
+#define PROJECT_ARRIVAL_H
 
 #include "Event.h"
 #include "Cashier.h"
@@ -11,11 +11,11 @@
 
 class Arrival : public Event{
 private:
-    Cashier cashier;
-    Client client;
+    Cashier * cashier;
+    Client * client;
 
 public:
-    Arrival(double time, Cashier cashier, Client client);
+    Arrival(double time, Cashier & cashier, Client & client);
     void process();
 };
 

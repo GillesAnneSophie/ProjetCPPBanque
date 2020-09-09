@@ -6,9 +6,9 @@
 
 //TODO voir si ok appel parent
 Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) : DiscreteEventSimulation(0) {
+    bank = new Bank(averageServiceTime, cashiersCount);
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
-    bank = new Bank(averageServiceTime, cashiersCount);
 }
 
 double Simulation::getAverageArrivalTime() {

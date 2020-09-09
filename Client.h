@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_CLIENT_H
-#define PROJET_CLIENT_H
+#ifndef PROJECT_CLIENT_H
+#define PROJECT_CLIENT_H
 
 class Client{
 private:

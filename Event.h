@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_EVENT_H
-#define PROJET_EVENT_H
+#ifndef PROJECT_EVENT_H
+#define PROJECT_EVENT_H
 
 class Event{
 private:

@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_DEPARTURE_H
-#define PROJET_DEPARTURE_H
+#ifndef PROJECT_DEPARTURE_H
+#define PROJECT_DEPARTURE_H
 
 #include "Event.h"
 

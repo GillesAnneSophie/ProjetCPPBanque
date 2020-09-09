@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_QUEUE_H
-#define PROJET_QUEUE_H
+#ifndef PROJECT_QUEUE_H
+#define PROJECT_QUEUE_H
 
 #include <iostream>
 #include <deque>
@@ -18,7 +18,7 @@ private:
     deque<Client> clientQueue;
     int maxLength;
     double integral; //TODO calcul de l'intégrale
-    Bank bank;
+    Bank * bank;
 
 public:
     Queue(Bank bank);

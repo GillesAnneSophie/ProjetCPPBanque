@@ -4,10 +4,9 @@
 
 #include "Arrival.h"
 
-Arrival::Arrival(double time, Cashier cashier, Client client) {
-    //TODO time
-    this->cashier = cashier;
-    this->client = client;
+Arrival::Arrival(double time, Cashier & cashier, Client & client) : Event(time) {
+    this->cashier = &cashier;
+    this->client = &client;
 }
 
 void Arrival::process() {

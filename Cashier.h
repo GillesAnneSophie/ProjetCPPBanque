@@ -2,8 +2,8 @@
  * @author Anne-Sophie GILLES
  */
 
-#ifndef PROJET_CASHIER_H
-#define PROJET_CASHIER_H
+#ifndef PROJECT_CASHIER_H
+#define PROJECT_CASHIER_H
 
 #include "Bank.h"
 
