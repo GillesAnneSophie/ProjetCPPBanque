@@ -3,4 +3,4 @@ project(Projet)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Projet main.cpp)
+add_executable(Projet Bank.cpp Simulation.cpp Client.cpp Cashier.cpp Queue.cpp)
