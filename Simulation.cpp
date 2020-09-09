@@ -4,10 +4,11 @@
 
 #include "Simulation.h"
 
-Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) {
+//TODO voir si ok appel parent
+Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) : DiscreteEventSimulation(0) {
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
-    //TODO
+    bank = new Bank(averageServiceTime, cashiersCount);
 }
 
 double Simulation::getAverageArrivalTime() {

@@ -5,6 +5,8 @@
 #ifndef PROJET_CASHIER_H
 #define PROJET_CASHIER_H
 
+#include "Bank.h"
+
 class Cashier{
 private:
     double averageServiceTime;

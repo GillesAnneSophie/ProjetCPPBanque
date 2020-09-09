@@ -7,6 +7,7 @@
 Queue::Queue(Bank bank) {
     this->bank = bank;
     maxLength = 0;
+    //TODO initialiser queue ?
 }
 
 double Queue::getAverageLength() {
@@ -22,16 +23,16 @@ int Queue::getMaxLength() {
 }
 
 bool Queue::isEmpty() {
-    return queue.empty();
+    return clientQueue.empty();
 }
 
 void Queue::addClient(Client client) {
-    queue.push_back(client);
+    clientQueue.push_back(client);
     //TODO
 }
 
 Client Queue::remove() {
-    Client client = queue.front();
-    queue.pop_front();
+    Client client = clientQueue.front();
+    clientQueue.pop_front();
     return client;
 }

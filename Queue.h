@@ -15,7 +15,7 @@ using namespace std;
 
 class Queue{
 private:
-    deque<Client> queue;
+    deque<Client> clientQueue;
     int maxLength;
     double integral; //TODO calcul de l'intégrale
     Bank bank;
