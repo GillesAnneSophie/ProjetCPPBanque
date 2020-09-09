@@ -7,6 +7,8 @@
 
 #include "Bank.h"
 
+class Bank;
+
 class Cashier{
 private:
     double averageServiceTime;

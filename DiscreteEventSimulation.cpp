@@ -12,7 +12,7 @@ double DiscreteEventSimulation::getCurrentTime() {
     return currentTime;
 }
 
-void DiscreteEventSimulation::addEvent(Event event) {
+void DiscreteEventSimulation::addEvent(Event & event) {
     eventQueue.push(event);
     //TODO
 }

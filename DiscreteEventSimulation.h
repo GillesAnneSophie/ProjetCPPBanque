@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <queue>
+#include <vector>
 #include "Event.h"
 #include "CompareEventPriority.h"
 
@@ -17,11 +18,11 @@ class DiscreteEventSimulation{
 private:
     double currentTime;
     double startTime;
-    priority_queue<Event, CompareEventPriority> eventQueue;
+    priority_queue<Event, vector<Event>, CompareEventPriority> eventQueue;
 
 public:
     DiscreteEventSimulation(double startTime);
-    void addEvent(Event event);
+    void addEvent(Event & event);
     double getCurrentTime();
     void launch();
 };

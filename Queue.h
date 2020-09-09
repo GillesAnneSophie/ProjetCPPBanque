@@ -12,6 +12,7 @@
 
 using namespace std;
 
+class Bank;
 
 class Queue{
 private:

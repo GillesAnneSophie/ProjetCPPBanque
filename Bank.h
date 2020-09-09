@@ -8,6 +8,9 @@
 #include "Cashier.h"
 #include "Queue.h"
 
+class Cashier;
+class Queue;
+
 class Bank{
 private:
     int cashiersCount;
