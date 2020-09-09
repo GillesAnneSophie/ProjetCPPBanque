@@ -8,12 +8,12 @@ DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
     this->startTime = startTime;
 }
 
-double DiscreteEventSimulation::getCurrentHour() {
-    return currentHour;
+double DiscreteEventSimulation::getCurrentTime() {
+    return currentTime;
 }
 
 void DiscreteEventSimulation::addEvent(Event event) {
-    //eventQueue.push()
+    eventQueue.push()
 }
 
 void DiscreteEventSimulation::launch() {

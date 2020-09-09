@@ -8,20 +8,21 @@
 #include <iostream>
 #include <queue>
 #include "Event.h"
+#include "CompareEventPriority.h"
 
 using namespace std;
 
 
 class DiscreteEventSimulation{
 private:
-    double currentHour;
+    double currentTime;
     double startTime;
-    priority_queue<Event> eventQueue;
+    priority_queue<Event, CompareEventPriority> eventQueue;
 
 public:
     DiscreteEventSimulation(double startTime);
     void addEvent(Event event);
-    double getCurrentHour();
+    double getCurrentTime();
     void launch();
 };
 
