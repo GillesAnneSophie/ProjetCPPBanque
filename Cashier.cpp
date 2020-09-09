@@ -4,7 +4,7 @@
 
 #include "Cashier.h"
 
-Cashier::Cashier(double averageServiceTime, Bank bank) {
+Cashier::Cashier(double averageServiceTime, Bank * bank) {
     this->bank = bank;
     this->averageServiceTime = averageServiceTime;
 }

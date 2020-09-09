@@ -11,11 +11,11 @@ class Cashier{
 private:
     double averageServiceTime;
     int clientsCount;
-    Bank bank;
+    Bank * bank;
     bool available;
 
 public:
-    Cashier(double averageServiceTime, Bank bank);
+    Cashier(double averageServiceTime, Bank * bank);
     double getAverageServiceTime();
     int getClientsCount();
     double getOccupationRate();

@@ -21,7 +21,7 @@ private:
     Bank * bank;
 
 public:
-    Queue(Bank bank);
+    Queue(Bank * bank);
     int getMaxLength();
     double getAverageLength();
     double getAverageWaitingTime();

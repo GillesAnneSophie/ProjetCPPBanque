@@ -4,8 +4,8 @@
 
 #include "Queue.h"
 
-Queue::Queue(Bank bank) {
-    this->bank = &bank;
+Queue::Queue(Bank * bank) {
+    this->bank = bank;
     maxLength = 0;
     //TODO initialiser queue ?
 }
