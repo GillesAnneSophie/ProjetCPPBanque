@@ -13,7 +13,7 @@ double DiscreteEventSimulation::getCurrentTime() {
 }
 
 void DiscreteEventSimulation::addEvent(Event & event) {
-    eventQueue.push(event);
+    eventQueue.push(&event);
     //TODO
 }
 

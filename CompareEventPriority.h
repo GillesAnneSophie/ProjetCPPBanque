@@ -9,7 +9,7 @@
 
 class CompareEventPriority{
 public:
-    int operator() (Event & e1, Event & e2);
+    int operator() (Event * & e1, Event * & e2);
 };
 
 #endif
