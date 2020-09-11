@@ -8,14 +8,15 @@
 #include "Event.h"
 #include "Simulation.h"
 
+class Cashier;
+
 class Departure : public Event{
 private:
-    Simulation * simulation;
     Client * client;
     Cashier * cashier;
 
 public:
-    Departure(double time, Client & client, Cashier & cashier, Simulation & simulation);
+    Departure(double time, Client & client, Cashier & cashier);
     Departure(const Departure & departure);
     void process();
 };

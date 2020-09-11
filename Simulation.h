@@ -9,6 +9,8 @@
 #include "DiscreteEventSimulation.h"
 #include "Arrival.h"
 
+class Bank;
+
 class Simulation : public DiscreteEventSimulation{
 private:
     double plannedDuration;

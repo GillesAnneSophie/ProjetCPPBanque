@@ -47,7 +47,7 @@ void Cashier::serveClient(Client & client) {
 
     //TODO random loi de poisson avec un wait()
 
-    Departure departure(bank->getSimulation().getCurrentTime(), client, *this, bank->getSimulation());
+    Departure departure(bank->getSimulation().getCurrentTime(), client, *this);
     bank->getSimulation().addEvent(departure);
 }
 

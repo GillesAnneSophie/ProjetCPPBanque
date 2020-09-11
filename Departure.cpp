@@ -4,14 +4,12 @@
 
 #include "Departure.h"
 
-Departure::Departure(double time, Client & client, Cashier & cashier, Simulation & simulation) : Event(time) {
-    this->simulation = &simulation;
+Departure::Departure(double time, Client & client, Cashier & cashier) : Event(time) {
     this->client = &client;
     this->cashier = &cashier;
 }
 
 Departure::Departure(const Departure & departure) : Event(departure) {
-    this->simulation = departure.simulation;
     this->client = departure.client;
     this->cashier = departure.cashier;
 }
