@@ -37,16 +37,26 @@ void DiscreteEventSimulation::addEvent(Event & event) {
     cout << "- addEvent()" << endl;
     eventQueue.push(&event);
 }
+
+/*
+    Event * e = pq.top();
+        cout << "pq.top() = " << pq.top()->getTime()  << endl;
+        cout << "e->getTime() = " << e->getTime()  << endl;
+        pq.pop();
+ * */
+
 void DiscreteEventSimulation::launch() {
 #ifdef _WIN32
     Sleep(5000);
 #else
-    sleep(5000);
+    sleep(5);
 #endif
     cout << "> launch()" << endl;
 
     while(!eventQueue.empty()) {
         Event * currentEvent = eventQueue.top();
+
+        cout << "eventQueue.top() = " << this->eventQueue.top()->getTime()  << endl;
 
         cout << "\tINFO: getTime=" << currentEvent->getTime() << endl;
         cout << "\tINFO: getTime=" << eventQueue.top()->getTime() << endl;
@@ -67,7 +77,7 @@ void DiscreteEventSimulation::launch() {
 #ifdef _WIN32
     Sleep(5000);
 #else
-    sleep(5000);
+    sleep(5);
 #endif
     cout << "< launch()" << endl;
 }
