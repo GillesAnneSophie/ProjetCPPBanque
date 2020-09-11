@@ -38,7 +38,11 @@ void DiscreteEventSimulation::addEvent(Event & event) {
     eventQueue.push(&event);
 }
 void DiscreteEventSimulation::launch() {
+#ifdef _WIN32
+    Sleep(5000);
+#else
     sleep(5000);
+#endif
     cout << "> launch()" << endl;
 
     while(!eventQueue.empty()) {
@@ -60,6 +64,10 @@ void DiscreteEventSimulation::launch() {
         }
     }
 
+#ifdef _WIN32
+    Sleep(5000);
+#else
     sleep(5000);
+#endif
     cout << "< launch()" << endl;
 }
