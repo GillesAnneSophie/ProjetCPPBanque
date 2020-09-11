@@ -10,6 +10,9 @@
 #include "Client.h"
 #include "Simulation.h"
 
+class Simulation;
+class Cashier;
+
 class Arrival : public Event{
 private:
     Cashier * cashier;
