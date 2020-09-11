@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    int plannedDuration = 10;
+    int plannedDuration = 100;
     int averageArrivalTime = 5;
     int averageServiceTime = 10;
     int cashiersCount = 10;

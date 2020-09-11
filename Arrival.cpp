@@ -18,9 +18,11 @@ Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
 }
 
 Arrival::Arrival(const Arrival & arrival) : Event(arrival) {
+    cout << "> Arrival() - CopyConstructor" << endl;
     this->cashier = arrival.cashier;
     this->client = arrival.client;
     this->simulation = arrival.simulation;
+    cout << "< Arrival() - CopyConstructor" << endl;
 }
 
 void Arrival::process() {
@@ -42,6 +44,9 @@ void Arrival::process() {
     double random = Poisson::next(simulation->getAverageArrivalTime());
     double nextTime = simulation->getCurrentTime() + random;
     if(nextTime <= simulation->getPlannedDuration()){
+        if (simulation->DEBUG) {
+            cout << "\taddEvent()" << endl;   
+        }
         simulation->addEvent(new Arrival(nextTime, *simulation));
     }
 
