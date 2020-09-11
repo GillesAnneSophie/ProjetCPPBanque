@@ -23,6 +23,7 @@ public:
     int getCashiersCount();
     int getClientsCount();
     Cashier getFirstAvailableCashier();
+    Queue & getQueue();
 };
 
 #endif

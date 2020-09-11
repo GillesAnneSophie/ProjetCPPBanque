@@ -31,3 +31,7 @@ Cashier Bank::getFirstAvailableCashier() {
         i++;
     }
 }
+
+Queue & Bank::getQueue() {
+    return *queue;
+}

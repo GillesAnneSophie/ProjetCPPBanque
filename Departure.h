@@ -6,12 +6,15 @@
 #define PROJECT_DEPARTURE_H
 
 #include "Event.h"
+#include "Simulation.h"
 
 class Departure : public Event{
 private:
+    Simulation * simulation;
+    Client * client;
 
 public:
-    Departure(double time);
+    Departure(double time, Client & client, Simulation & simulation);
     void process();
 };
 

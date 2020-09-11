@@ -4,11 +4,25 @@
 
 #include "Arrival.h"
 
-Arrival::Arrival(double time, Cashier & cashier, Client & client) : Event(time) {
-    this->cashier = &cashier;
-    this->client = &client;
+Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
+    this->simulation = &simulation;
 }
 
 void Arrival::process() {
-    //TODO
+    Client client1(simulation->getCurrentTime());
+    this->client = &client1;
+    Cashier cashier1 = simulation->getBank().getFirstAvailableCashier();
+
+    if(cashier1.getAverageServiceTime() != NULL){//TODO ? à voir si cette condition est ok
+        this->cashier = &cashier1;
+        cashier1.serveClient(client1);
+    }
+    else{
+        simulation->getBank().getQueue().addClient(client1);
+    }
+    double nextTime = simulation->getCurrentTime(); //TODO générer le random avec poisson : random.next(simu.tempsMoyenArrivee);
+    if(nextTime <= simulation->getPlannedDuration()){
+        Arrival a(nextTime, (Simulation &) simulation);//TODO ok ?
+        simulation->addEvent(a);
+    }
 }

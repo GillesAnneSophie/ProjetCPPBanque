@@ -18,3 +18,7 @@ double Simulation::getAverageArrivalTime() {
 double Simulation::getPlannedDuration() {
     return plannedDuration;
 }
+
+Bank & Simulation::getBank() {
+    return *bank;
+}

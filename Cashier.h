@@ -22,7 +22,7 @@ public:
     int getClientsCount();
     double getOccupationRate();
     bool isAvailable();
-    void serveClient();
+    void serveClient(Client client);
     void freeClient();
 };
 

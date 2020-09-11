@@ -18,6 +18,7 @@ public:
     Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount);
     double getPlannedDuration();
     double getAverageArrivalTime();
+    Bank & getBank();
 };
 
 #endif
