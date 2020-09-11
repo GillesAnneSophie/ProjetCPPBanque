@@ -61,6 +61,7 @@ Cashier* Bank::getFirstAvailableCashier() {
         if(cashiers[i]->isAvailable()){
             if(simulation->DEBUG){
                 cout << "\tisAvailable" << endl;
+                cout << "\tindex = " << i << endl;
             }
             return cashiers[i];
         }

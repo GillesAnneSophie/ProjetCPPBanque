@@ -68,7 +68,7 @@ void Cashier::serveClient(Client & client) {
 
 void Cashier::free() {
     if(bank->getSimulation().DEBUG){
-        cout << "- free()" << endl;
+        cout << "- Cashier::free()" << endl;
     }
     available = true;
 }
