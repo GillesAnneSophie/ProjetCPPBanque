@@ -5,6 +5,13 @@
 #include "DiscreteEventSimulation.h"
 
 #include <iostream>
+
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+
 using namespace std;
 
 DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
@@ -31,7 +38,7 @@ void DiscreteEventSimulation::addEvent(Event & event) {
     eventQueue.push(&event);
 }
 void DiscreteEventSimulation::launch() {
-    _sleep(5000);
+    sleep(5000);
     cout << "> launch()" << endl;
 
     while(!eventQueue.empty()) {
@@ -53,6 +60,6 @@ void DiscreteEventSimulation::launch() {
         }
     }
 
-    _sleep(5000);
+    sleep(5000);
     cout << "< launch()" << endl;
 }
