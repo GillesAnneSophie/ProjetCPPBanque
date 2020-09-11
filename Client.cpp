@@ -8,7 +8,9 @@
 using namespace std;
 
 Client::Client(double arrivalTime) {
+    cout << "> Client()" << endl;
     this->arrivalTime = arrivalTime;
+    cout << "< Client()" << endl;
 }
 
 Client::Client(const Client & clientObj) {
@@ -17,4 +19,8 @@ Client::Client(const Client & clientObj) {
 
 double Client::getArrivalTime() {
     return arrivalTime;
+}
+
+double Client::setArrivalTime(double arrivalTime) {
+    this->arrivalTime = arrivalTime;
 }

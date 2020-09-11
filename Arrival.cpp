@@ -33,16 +33,18 @@ void Arrival::process() {
         cout << "> Arrival::process()" << endl;
     }
 
-    Client client1(simulation->getCurrentTime());
-    this->client = &client1;
+    //Client client1(simulation->getCurrentTime());
+    Client * client1 = new Client(simulation->getCurrentTime());
+    // this->client = &client1;
+    this->client = client1;
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
 
     if(cashier1 != nullptr){
         this->cashier = cashier1;
-        cashier1->serveClient(client1);
+        cashier1->serveClient(*client1);
     }
     else{
-        simulation->getBank().getQueue().addClient(client1);
+        simulation->getBank().getQueue().addClient(*client1);
     }
 
     Poisson::init();

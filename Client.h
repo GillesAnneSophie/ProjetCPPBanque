@@ -25,6 +25,8 @@ public:
      * @return arrivalTime
      */
     double getArrivalTime();
+
+    double setArrivalTime(double arrivalTime);
 };
 
 #endif

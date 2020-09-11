@@ -28,6 +28,9 @@ void Departure::process() {
         cout << "> Departure::process()" << endl;
     }
 
+
+    client->setArrivalTime(0);
+
     delete client;
     cashier->free();
 
