@@ -6,7 +6,9 @@
 
 Queue::Queue(Bank * bank) {
     this->bank = bank;
-    maxLength = integral = 0;
+    maxLength = 0;
+    integral = 0;
+    waitingTime = 0;
 }
 
 Queue::Queue(const Queue & queue) {
@@ -14,11 +16,11 @@ Queue::Queue(const Queue & queue) {
     this->clientQueue = queue.clientQueue;
     this->integral = queue.integral;
     this->maxLength = queue.maxLength;
+    this->waitingTime = queue.waitingTime;
 }
 
 double Queue::getAverageLength() {
-    //TODO intégrale
-    return 0;
+    return integral/bank->getSimulation().getRealDuration();
 }
 
 double Queue::getAverageWaitingTime() {
@@ -33,7 +35,7 @@ bool Queue::isEmpty() {
     return clientQueue.empty();
 }
 
-void Queue::addClient(Client client) {
+void Queue::addClient(Client & client) {
     clientQueue.push_back(client);
     int currentSize = clientQueue.size();
     if(currentSize > maxLength){
@@ -42,9 +44,10 @@ void Queue::addClient(Client client) {
 }
 
 Client Queue::remove() {
-    //TODO calculer intégrale
-
     Client client = clientQueue.front();
+
+    integral += clientQueue.size()*(bank->getSimulation().getCurrentTime()-client.getArrivalTime());
+
     clientQueue.pop_front();
     return client;
 }

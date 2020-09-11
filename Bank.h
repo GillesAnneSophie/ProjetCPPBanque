@@ -27,6 +27,7 @@ public:
     ~Bank();
     int getCashiersCount();
     int getClientsCount();
+    void addClientToCount();
     Cashier* getFirstAvailableCashier();
     Queue & getQueue();
     Simulation & getSimulation();

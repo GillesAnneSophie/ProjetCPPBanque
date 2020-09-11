@@ -13,6 +13,7 @@ Departure::Departure(double time, Client & client, Cashier & cashier, Simulation
 Departure::Departure(const Departure & departure) : Event(departure) {
     this->simulation = departure.simulation;
     this->client = departure.client;
+    this->cashier = departure.cashier;
 }
 
 void Departure::process() {

@@ -8,13 +8,18 @@ Simulation::Simulation(int plannedDuration, double averageArrivalTime, double av
     bank = new Bank(averageServiceTime, cashiersCount, this);
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
+    this->realDuration = plannedDuration;
+
+    double nextTime = this->getCurrentTime(); //TODO générer le random avec poisson : random.next(simu.tempsMoyenArrivee);
+    Arrival a(nextTime, *this);
+    this->addEvent(a);
 }
 
 Simulation::Simulation(const Simulation & simulation) : DiscreteEventSimulation(0) {
     this->averageArrivalTime = simulation.averageArrivalTime;
     this->bank = simulation.bank;
     this->plannedDuration = simulation.plannedDuration;
-
+    this->realDuration = simulation.realDuration;
 }
 
 double Simulation::getAverageArrivalTime() {

@@ -6,6 +6,8 @@
 
 Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
     this->simulation = &simulation;
+    this->cashier = nullptr;
+    this->client = nullptr;
 }
 
 Arrival::Arrival(const Arrival & arrival) : Event(arrival) {

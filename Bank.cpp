@@ -7,6 +7,7 @@
 Bank::Bank(double averageServiceTime, int cashiersCount, Simulation * simulation) {
     this->cashiersCount = cashiersCount;
     this->simulation = simulation;
+    this->clientsCount = 0;
     queue = new Queue(this);
     cashiers = new Cashier*[cashiersCount];
     for(int i=0 ; i<cashiersCount ; i++){
@@ -35,6 +36,10 @@ int Bank::getClientsCount() {
     return clientsCount;
 }
 
+void Bank::addClientToCount() {
+    clientsCount++;
+}
+
 Cashier* Bank::getFirstAvailableCashier() {
     int i = 0;
     while(i < cashiersCount){
@@ -43,7 +48,7 @@ Cashier* Bank::getFirstAvailableCashier() {
         }
         i++;
     }
-    return NULL;
+    return nullptr;
 }
 
 Queue& Bank::getQueue() {

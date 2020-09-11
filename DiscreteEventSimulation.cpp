@@ -6,6 +6,7 @@
 
 DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
     this->startTime = startTime;
+    this->currentTime = startTime;
 }
 
 DiscreteEventSimulation::DiscreteEventSimulation(const DiscreteEventSimulation & discreteEventSimulation) {

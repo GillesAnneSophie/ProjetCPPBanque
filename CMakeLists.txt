@@ -3,4 +3,4 @@ project(Projet)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Projet main.cpp Bank.cpp Simulation.cpp Client.cpp Cashier.cpp Queue.cpp DiscreteEventSimulation.cpp Event.cpp Arrival.cpp Departure.cpp CompareEventPriority.cpp)
+add_executable(Projet main.cpp Bank.cpp Simulation.cpp Client.cpp Cashier.cpp Queue.cpp DiscreteEventSimulation.cpp Event.cpp Arrival.cpp Departure.cpp CompareEventPriority.cpp Poisson.cpp)

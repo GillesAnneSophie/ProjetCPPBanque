@@ -6,6 +6,7 @@
 
 Client::Client(double arrivalTime) {
     this->arrivalTime = arrivalTime;
+
 }
 
 Client::Client(const Client & clientObj) {

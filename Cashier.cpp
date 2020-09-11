@@ -8,6 +8,8 @@ Cashier::Cashier(double averageServiceTime, Bank & bank) {
     this->bank = &bank;
     this->averageServiceTime = averageServiceTime;
     this->available = true;
+    clientsCount = 0;
+    occupiedTime = 0;
 }
 
 Cashier::Cashier(const Cashier & cashier) {
@@ -15,6 +17,7 @@ Cashier::Cashier(const Cashier & cashier) {
     this->averageServiceTime = cashier.averageServiceTime;
     this->available = cashier.available;
     this->clientsCount = cashier.clientsCount;
+    this->occupiedTime = cashier.occupiedTime;
 }
 
 int Cashier::getClientsCount() {
@@ -34,9 +37,10 @@ bool Cashier::isAvailable() {
     return available;
 }
 
-void Cashier::serveClient(Client client) {
+void Cashier::serveClient(Client & client) {
     clientsCount++;
-    //TODO random loi de poisson avec un wait() & occupiedTime += rand;
+    bank->addClientToCount();
+    //TODO random loi de poisson avec un wait() & occupiedTime += rand; & créer un départ et l'ajouter dans les events
 }
 
 void Cashier::free() {

@@ -18,7 +18,7 @@ class Queue{
 private:
     deque<Client> clientQueue;
     int maxLength;
-    double integral; //TODO calcul de l'intégrale
+    double integral;
     Bank * bank;
     double waitingTime;
 
@@ -28,7 +28,7 @@ public:
     int getMaxLength();
     double getAverageLength();
     double getAverageWaitingTime();
-    void addClient(Client client);
+    void addClient(Client & client);
     bool isEmpty();
     Client remove();
     void setWaitingTime(double waitingTime);

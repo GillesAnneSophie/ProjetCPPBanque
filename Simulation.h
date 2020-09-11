@@ -7,6 +7,7 @@
 
 #include "Bank.h"
 #include "DiscreteEventSimulation.h"
+#include "Arrival.h"
 
 class Simulation : public DiscreteEventSimulation{
 private:
