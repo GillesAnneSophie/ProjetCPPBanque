@@ -4,7 +4,6 @@
 
 #include "DiscreteEventSimulation.h"
 
-#include <windows.h>
 #include <iostream>
 using namespace std;
 
@@ -32,7 +31,7 @@ void DiscreteEventSimulation::addEvent(Event & event) {
     eventQueue.push(&event);
 }
 void DiscreteEventSimulation::launch() {
-    Sleep(5000);
+    _sleep(5000);
     cout << "> launch()" << endl;
 
     while(!eventQueue.empty()) {
@@ -54,6 +53,6 @@ void DiscreteEventSimulation::launch() {
         }
     }
 
-    Sleep(5000);
+    _sleep(5000);
     cout << "< launch()" << endl;
 }
