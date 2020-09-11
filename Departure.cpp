@@ -4,8 +4,12 @@
 
 #include "Departure.h"
 
-Departure::Departure(double time) : Event(time) {}
+Departure::Departure(double time, Client & client, Simulation & simulation) : Event(time) {
+    this->simulation = &simulation;
+    this->client = &client;
+}
 
 void Departure::process() {
     //TODO
+
 }

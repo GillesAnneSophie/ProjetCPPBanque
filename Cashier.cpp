@@ -32,7 +32,7 @@ bool Cashier::isAvailable() {
     return available;
 }
 
-void Cashier::serveClient() {
+void Cashier::serveClient(Client client) {
     //TODO
 }
 
