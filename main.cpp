@@ -37,7 +37,7 @@ int main() {
     for(int i=0 ; i<cashiersCount ; i++){
         Cashier cashier = bank.getCashier(i);
         cout << "Cashier " << i << ": " << endl
-             << "\toccupationRate: " << cashier.getOccupationRate() << endl
+             << "\toccupationRate: " << cashier.getOccupationRate() << "%" << endl
              << "\tclientsCount: " << cashier.getClientsCount() << endl;
     }
 

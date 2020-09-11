@@ -42,8 +42,7 @@ void Arrival::process() {
     double random = Poisson::next(simulation->getAverageArrivalTime());
     double nextTime = simulation->getCurrentTime() + random;
     if(nextTime <= simulation->getPlannedDuration()){
-        Arrival a(nextTime, *simulation);
-        simulation->addEvent(a);
+        simulation->addEvent(new Arrival(nextTime, *simulation));
     }
 
     cout << "< Arrival::process()" << endl;

@@ -17,8 +17,7 @@ Simulation::Simulation(int plannedDuration, double averageArrivalTime, double av
     this->averageArrivalTime = averageArrivalTime;
     this->realDuration = plannedDuration;
 
-    Arrival a(0, *this);
-    this->addEvent(a);
+    this->addEvent(new Arrival(0, *this));
 
     if(DEBUG){
         cout << "< Simulation()" << endl;

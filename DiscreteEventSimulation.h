@@ -35,7 +35,7 @@ public:
      * Add the given event to eventQueue
      * @param event
      */
-    void addEvent(Event & event);
+    void addEvent(Event * event);
     /**
      * Get current time
      * @return currentTime
