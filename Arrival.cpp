@@ -28,7 +28,10 @@ void Arrival::process() {
     else{
         simulation->getBank().getQueue().addClient(client1);
     }
-    double nextTime = simulation->getCurrentTime(); //TODO générer le random avec poisson : random.next(simu.tempsMoyenArrivee);
+
+    Poisson::init();
+    double random = Poisson::next(simulation->getAverageArrivalTime());
+    double nextTime = simulation->getCurrentTime() + random;
     if(nextTime <= simulation->getPlannedDuration()){
         Arrival a(nextTime, *simulation);
         simulation->addEvent(a);

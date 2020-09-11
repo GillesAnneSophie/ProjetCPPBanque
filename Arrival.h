@@ -9,6 +9,7 @@
 #include "Cashier.h"
 #include "Client.h"
 #include "Simulation.h"
+#include "Poisson.h"
 
 class Simulation;
 class Cashier;

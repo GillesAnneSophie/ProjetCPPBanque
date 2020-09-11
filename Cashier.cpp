@@ -40,7 +40,11 @@ bool Cashier::isAvailable() {
 void Cashier::serveClient(Client & client) {
     clientsCount++;
     bank->addClientToCount();
-    //TODO random loi de poisson avec un wait() & occupiedTime += rand; & créer un départ et l'ajouter dans les events
+
+    Poisson::init();
+    double random = Poisson::next();
+    occupiedTime += random;
+    //TODO random loi de poisson avec un wait() &  créer un départ et l'ajouter dans les events
 }
 
 void Cashier::free() {

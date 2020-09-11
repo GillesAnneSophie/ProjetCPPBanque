@@ -10,7 +10,9 @@ Simulation::Simulation(int plannedDuration, double averageArrivalTime, double av
     this->averageArrivalTime = averageArrivalTime;
     this->realDuration = plannedDuration;
 
-    double nextTime = this->getCurrentTime(); //TODO générer le random avec poisson : random.next(simu.tempsMoyenArrivee);
+    Poisson::init();
+    double random = Poisson::next(averageArrivalTime);
+    double nextTime = this->getCurrentTime() + random;
     Arrival a(nextTime, *this);
     this->addEvent(a);
 }
