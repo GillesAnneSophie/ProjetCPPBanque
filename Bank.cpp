@@ -14,6 +14,14 @@ Bank::Bank(double averageServiceTime, int cashiersCount) {
     }
 }
 
+Bank::Bank(const Bank & bank) {
+    this->cashiersCount = bank.cashiersCount;
+    //TODO
+    this->queue = bank.queue;
+    this->cashiers = bank.cashiers;
+    this->clientsCount = bank.clientsCount;
+}
+
 int Bank::getCashiersCount() {
     return cashiersCount;
 }

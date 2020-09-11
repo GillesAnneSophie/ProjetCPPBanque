@@ -11,6 +11,13 @@ Simulation::Simulation(int plannedDuration, double averageArrivalTime, double av
     this->averageArrivalTime = averageArrivalTime;
 }
 
+Simulation::Simulation(const Simulation & simulation) : DiscreteEventSimulation(0) {
+    this->averageArrivalTime = simulation.averageArrivalTime;
+    this->bank = simulation.bank;
+    this->plannedDuration = simulation.plannedDuration;
+
+}
+
 double Simulation::getAverageArrivalTime() {
     return averageArrivalTime;
 }

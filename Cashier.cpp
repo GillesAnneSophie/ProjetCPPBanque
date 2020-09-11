@@ -9,6 +9,13 @@ Cashier::Cashier(double averageServiceTime, Bank * bank) {
     this->averageServiceTime = averageServiceTime;
 }
 
+Cashier::Cashier(const Cashier & cashier) {
+    this->bank = cashier.bank;
+    this->averageServiceTime = cashier.averageServiceTime;
+    this->available = cashier.available;
+    this->clientsCount = cashier.clientsCount;
+}
+
 int Cashier::getClientsCount() {
     return clientsCount;
 }
