@@ -11,7 +11,5 @@ void Poisson::init(int seed) {
 }
 
 double Poisson::next(double moy) {
-    cout << "- Poisson::next" << endl;
-
     return -log(((double)rand()/RAND_MAX))*moy;
 }

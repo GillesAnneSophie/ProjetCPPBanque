@@ -15,12 +15,8 @@
 using namespace std;
 
 DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
-    cout << "> DiscreteEventSimulation()" << endl;
-
     this->startTime = startTime;
     this->currentTime = startTime;
-
-    cout << "< DiscreteEventSimulation()" << endl;
 }
 
 DiscreteEventSimulation::DiscreteEventSimulation(const DiscreteEventSimulation & discreteEventSimulation) {
@@ -38,38 +34,28 @@ void DiscreteEventSimulation::addEvent(Event * event) {
     eventQueue.push(event);
 }
 
-/*
-    Event * e = pq.top();
-        cout << "pq.top() = " << pq.top()->getTime()  << endl;
-        cout << "e->getTime() = " << e->getTime()  << endl;
-        pq.pop();
- * */
-
 void DiscreteEventSimulation::launch() {
 #ifdef _WIN32
     Sleep(5000);
 #else
     sleep(5);
 #endif
-    cout << "> launch()" << endl;
 
     while(!eventQueue.empty()) {
         Event * currentEvent = eventQueue.top();
+        eventQueue.pop();
 
-        cout << "\tpriority_queue / eventQueue size : " << this->eventQueue.size() << endl;
+        cout << "\tcurrentTime=" << currentTime << endl
+             << "\teventQueue size : " << eventQueue.size() << endl
+             << "\teventQueue top time : " << eventQueue.top()->getTime() << endl
+             << "\teventQueue top time : " << currentEvent->getTime() << endl;
 
-        if (currentEvent->getTime() == currentTime) {
-            cout << "\tINFO: launch > if: " << currentEvent->getTime() << endl;
+        if ((int) currentEvent->getTime() == currentTime) {
+            currentTime++;
             currentEvent->process();
-            eventQueue.pop();
         } else {
-            //cerr << "\tERROR: launch > else: " << currentTime << endl;
-            cerr << "!!!ERROR: launch > else: " << currentTime << endl;
-        }
-        currentTime++;
-
-        if(currentTime >= 10){
-            break;
+            currentTime++;
+            cerr << "\n\tERROR: launch > else: " << currentTime << endl;
         }
     }
 
@@ -78,5 +64,4 @@ void DiscreteEventSimulation::launch() {
 #else
     sleep(5);
 #endif
-    cout << "< launch()" << endl;
 }

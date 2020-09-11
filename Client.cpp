@@ -8,8 +8,6 @@
 using namespace std;
 
 Client::Client(double arrivalTime) {
-    cout << "- Client()" << endl;
-
     this->arrivalTime = arrivalTime;
 }
 

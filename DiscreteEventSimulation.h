@@ -18,10 +18,9 @@ class DiscreteEventSimulation{
 private:
     double currentTime;
     double startTime;
-    //priority_queue<Event*, vector<Event*>, CompareEventPriority> eventQueue;
+    priority_queue<Event*, vector<Event*>, CompareEventPriority> eventQueue;
 
 public:
-    priority_queue<Event*, vector<Event*>, CompareEventPriority> eventQueue;
     /**
      * DiscreteEventSimulation Constructor
      * @param startTime

@@ -58,7 +58,7 @@ public:
      */
     double getRealDuration();
 
-    bool DEBUG = true;
+    bool DEBUG = false;
 };
 
 #endif

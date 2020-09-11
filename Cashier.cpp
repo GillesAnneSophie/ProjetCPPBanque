@@ -55,21 +55,13 @@ void Cashier::serveClient(Client & client) {
 
     bank->getSimulation().addEvent(new Departure(bank->getSimulation().getCurrentTime(), client, *this));
 
-    if(bank->getSimulation().DEBUG){
-        cout << "\tpriorityQueue / eventQueue size : " << bank->getSimulation().eventQueue.size() << endl;
-    }
-
-    if(bank->getSimulation().DEBUG){
-        cout << "\tDeparture" << endl;
+    if(!bank->getQueue().isEmpty()){
+        Client newClient = bank->getQueue().remove();
+        this->serveClient(newClient);
     }
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;
-    }
-
-    if(!bank->getQueue().isEmpty()){
-        Client newClient = bank->getQueue().remove();
-        this->serveClient(newClient);
     }
 }
 

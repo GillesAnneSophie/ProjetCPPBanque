@@ -8,25 +8,30 @@
 using namespace std;
 
 Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
-    cout << "> Arrival()" << endl;
+    if(simulation.DEBUG) {
+        cout << "> Arrival()" << endl;
+    }
+    cout << "\tDeparture.time=" << time << endl;
 
     this->simulation = &simulation;
     this->cashier = nullptr;
     this->client = nullptr;
 
-    cout << "< Arrival()" << endl;
+    if(simulation.DEBUG) {
+        cout << "< Arrival()" << endl;
+    }
 }
 
 Arrival::Arrival(const Arrival & arrival) : Event(arrival) {
-    cout << "> Arrival() - CopyConstructor" << endl;
     this->cashier = arrival.cashier;
     this->client = arrival.client;
     this->simulation = arrival.simulation;
-    cout << "< Arrival() - CopyConstructor" << endl;
 }
 
 void Arrival::process() {
-    cout << "> Arrival::process()" << endl;
+    if(simulation->DEBUG) {
+        cout << "> Arrival::process()" << endl;
+    }
 
     Client client1(simulation->getCurrentTime());
     this->client = &client1;
@@ -44,16 +49,11 @@ void Arrival::process() {
     double random = Poisson::next(simulation->getAverageArrivalTime());
     double nextTime = simulation->getCurrentTime() + random;
 
-    cout << "\tnextTime : " << nextTime << endl;
-
     if(nextTime <= simulation->getPlannedDuration()){
-        if (simulation->DEBUG) {
-            cout << "\tNew Arrival" << endl;   
-        }
-        //cout << "\tgetPlannedDuration()" << simulation->getPlannedDuration() << endl;
         simulation->addEvent(new Arrival(nextTime, *simulation));
-        cout << "\teventQueue / priorityQueue size : " << simulation->eventQueue.size() << endl;
     }
 
-    cout << "< Arrival::process()" << endl;
+    if(simulation->DEBUG) {
+        cout << "< Arrival::process()" << endl;
+    }
 }
