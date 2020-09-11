@@ -21,7 +21,7 @@ Bank::~Bank() {
 
 Bank::Bank(const Bank & bank) {
     this->cashiersCount = bank.cashiersCount;
-    //TODO
+    this->simulation = bank.simulation;
     this->queue = bank.queue;
     this->cashiers = bank.cashiers;
     this->clientsCount = bank.clientsCount;

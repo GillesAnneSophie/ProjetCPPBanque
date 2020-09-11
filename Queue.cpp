@@ -14,7 +14,6 @@ Queue::Queue(const Queue & queue) {
     this->clientQueue = queue.clientQueue;
     this->integral = queue.integral;
     this->maxLength = queue.maxLength;
-    //TODO initialiser queue ?
 }
 
 double Queue::getAverageLength() {
@@ -43,6 +42,8 @@ void Queue::addClient(Client client) {
 }
 
 Client Queue::remove() {
+    //TODO calculer intégrale
+
     Client client = clientQueue.front();
     clientQueue.pop_front();
     return client;
