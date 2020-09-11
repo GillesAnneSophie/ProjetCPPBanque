@@ -27,7 +27,7 @@ public:
     void setRealDuration(double realDuration);
     double getRealDuration();
 
-    bool DEBUG = true;
+    bool DEBUG = false;
 };
 
 #endif

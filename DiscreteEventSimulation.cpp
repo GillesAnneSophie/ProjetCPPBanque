@@ -4,6 +4,7 @@
 
 #include "DiscreteEventSimulation.h"
 
+#include <windows.h>
 #include <iostream>
 using namespace std;
 
@@ -31,15 +32,28 @@ void DiscreteEventSimulation::addEvent(Event & event) {
     eventQueue.push(&event);
 }
 void DiscreteEventSimulation::launch() {
+    Sleep(5000);
     cout << "> launch()" << endl;
 
-    if(!eventQueue.empty() && eventQueue.top()->getTime() == currentTime){
-        eventQueue.top()->process();//TODO PLANTE ICI
-        eventQueue.pop();
-    }
-    else{
+    while(!eventQueue.empty()) {
+        Event * currentEvent = eventQueue.top();
+
+        cout << "\tINFO: getTime=" << currentEvent->getTime() << endl;
+        cout << "\tINFO: getTime=" << eventQueue.top()->getTime() << endl;
+        if (eventQueue.top()->getTime() == currentTime) {
+            //cout << "\tINFO: launch > if: " << currentEvent->getTime() << endl;
+            //currentEvent->process();
+            eventQueue.pop();
+        } else {
+            cerr << "\tERROR: launch > else: " << currentTime << endl;
+        }
         currentTime++;
+
+        if(currentTime >= 10){
+            break;
+        }
     }
 
+    Sleep(5000);
     cout << "< launch()" << endl;
 }

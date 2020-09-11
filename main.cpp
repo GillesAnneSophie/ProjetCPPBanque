@@ -8,7 +8,7 @@
 using namespace std;
 
 int main() {
-    int plannedDuration = 100;
+    int plannedDuration = 10;
     int averageArrivalTime = 5;
     int averageServiceTime = 10;
     int cashiersCount = 10;
@@ -20,12 +20,14 @@ int main() {
          << "cashiersCount: " << cashiersCount << endl;
 
     Simulation simulation(plannedDuration, averageArrivalTime, averageServiceTime, cashiersCount);
+
+    cout << "----- Launch Simulation -----" << endl;
     simulation.launch();
+    cout << "----- End Simulation -----" << endl;
 
     simulation.setRealDuration(simulation.getCurrentTime());
 
-    cout << "----- End Simulation -----" << endl
-         << "realDuration: " << simulation.getRealDuration() << endl
+    cout << "realDuration: " << simulation.getRealDuration() << endl
          << "total clients count: " << simulation.getBank().getClientsCount() << endl
          << "queue max length: " << simulation.getBank().getQueue().getMaxLength() << endl
          << "queue average length: " << simulation.getBank().getQueue().getAverageLength() << endl
