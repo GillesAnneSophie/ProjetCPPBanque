@@ -43,11 +43,16 @@ void Arrival::process() {
     Poisson::init();
     double random = Poisson::next(simulation->getAverageArrivalTime());
     double nextTime = simulation->getCurrentTime() + random;
+
+    cout << "\tnextTime : " << nextTime << endl;
+
     if(nextTime <= simulation->getPlannedDuration()){
         if (simulation->DEBUG) {
-            cout << "\taddEvent()" << endl;   
+            cout << "\tNew Arrival" << endl;   
         }
+        //cout << "\tgetPlannedDuration()" << simulation->getPlannedDuration() << endl;
         simulation->addEvent(new Arrival(nextTime, *simulation));
+        cout << "\teventQueue / priorityQueue size : " << simulation->eventQueue.size() << endl;
     }
 
     cout << "< Arrival::process()" << endl;

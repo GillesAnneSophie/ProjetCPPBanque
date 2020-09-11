@@ -56,12 +56,15 @@ void DiscreteEventSimulation::launch() {
     while(!eventQueue.empty()) {
         Event * currentEvent = eventQueue.top();
 
+        cout << "\tpriority_queue / eventQueue size : " << this->eventQueue.size() << endl;
+
         if (currentEvent->getTime() == currentTime) {
             cout << "\tINFO: launch > if: " << currentEvent->getTime() << endl;
             currentEvent->process();
             eventQueue.pop();
         } else {
-            cerr << "\tERROR: launch > else: " << currentTime << endl;
+            //cerr << "\tERROR: launch > else: " << currentTime << endl;
+            cerr << "!!!ERROR: launch > else: " << currentTime << endl;
         }
         currentTime++;
 

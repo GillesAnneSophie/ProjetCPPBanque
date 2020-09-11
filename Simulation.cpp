@@ -20,6 +20,10 @@ Simulation::Simulation(int plannedDuration, double averageArrivalTime, double av
     this->addEvent(new Arrival(0, *this));
 
     if(DEBUG){
+        cout << "\tFirst Arrival Event" << endl;
+    }
+
+    if(DEBUG){
         cout << "< Simulation()" << endl;
     }
 }
