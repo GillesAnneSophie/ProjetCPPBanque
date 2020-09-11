@@ -11,6 +11,7 @@
 class Simulation : public DiscreteEventSimulation{
 private:
     double plannedDuration;
+    double realDuration;
     double averageArrivalTime;
     Bank * bank;
 
@@ -19,6 +20,8 @@ public:
     double getPlannedDuration();
     double getAverageArrivalTime();
     Bank & getBank();
+    void setRealDuration(double realDuration);
+    double getRealDuration();
 };
 
 #endif

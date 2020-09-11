@@ -4,9 +4,8 @@
 
 #include "Simulation.h"
 
-//TODO voir si ok appel parent
 Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) : DiscreteEventSimulation(0) {
-    bank = new Bank(averageServiceTime, cashiersCount);
+    bank = new Bank(averageServiceTime, cashiersCount, this);
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
 }
@@ -21,4 +20,12 @@ double Simulation::getPlannedDuration() {
 
 Bank & Simulation::getBank() {
     return *bank;
+}
+
+void Simulation::setRealDuration(double realDuration) {
+    this->realDuration = realDuration;
+}
+
+double Simulation::getRealDuration() {
+    return realDuration;
 }

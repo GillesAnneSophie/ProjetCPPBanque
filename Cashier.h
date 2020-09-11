@@ -6,6 +6,7 @@
 #define PROJECT_CASHIER_H
 
 #include "Bank.h"
+#include "Client.h"
 
 class Bank;
 
@@ -15,15 +16,16 @@ private:
     int clientsCount;
     Bank * bank;
     bool available;
+    double occupiedTime;
 
 public:
-    Cashier(double averageServiceTime, Bank * bank);
+    Cashier(double averageServiceTime, Bank & bank);
     double getAverageServiceTime();
     int getClientsCount();
     double getOccupationRate();
     bool isAvailable();
     void serveClient(Client client);
-    void freeClient();
+    void free();
 };
 
 #endif

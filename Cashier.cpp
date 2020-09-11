@@ -4,9 +4,10 @@
 
 #include "Cashier.h"
 
-Cashier::Cashier(double averageServiceTime, Bank * bank) {
-    this->bank = bank;
+Cashier::Cashier(double averageServiceTime, Bank & bank) {
+    this->bank = &bank;
     this->averageServiceTime = averageServiceTime;
+    this->available = true;
 }
 
 int Cashier::getClientsCount() {
@@ -18,7 +19,8 @@ double Cashier::getAverageServiceTime() {
 }
 
 double Cashier::getOccupationRate() {
-    //TODO
+    double rd = bank->getSimulation().getRealDuration();
+    return (occupiedTime/rd)*100;
 }
 
 bool Cashier::isAvailable() {
@@ -26,9 +28,10 @@ bool Cashier::isAvailable() {
 }
 
 void Cashier::serveClient(Client client) {
-    //TODO
+    clientsCount++;
+    //TODO random loi de poisson avec un wait() & occupiedTime += rand;
 }
 
-void Cashier::freeClient() {
-    //TODO
+void Cashier::free() {
+    available = true;
 }

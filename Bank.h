@@ -7,9 +7,11 @@
 
 #include "Cashier.h"
 #include "Queue.h"
+#include "Simulation.h"
 
 class Cashier;
 class Queue;
+class Simulation;
 
 class Bank{
 private:
@@ -17,13 +19,16 @@ private:
     int clientsCount;
     Cashier ** cashiers;
     Queue * queue;
+    Simulation * simulation;
 
 public:
-    Bank(double averageServiceTime, int cashiersCount);
+    Bank(double averageServiceTime, int cashiersCount, Simulation * simulation);
+    ~Bank();
     int getCashiersCount();
     int getClientsCount();
-    Cashier getFirstAvailableCashier();
+    Cashier* getFirstAvailableCashier();
     Queue & getQueue();
+    Simulation & getSimulation();
 };
 
 #endif

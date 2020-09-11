@@ -4,12 +4,13 @@
 
 #include "Departure.h"
 
-Departure::Departure(double time, Client & client, Simulation & simulation) : Event(time) {
+Departure::Departure(double time, Client & client, Cashier & cashier, Simulation & simulation) : Event(time) {
     this->simulation = &simulation;
     this->client = &client;
+    this->cashier = &cashier;
 }
 
 void Departure::process() {
-    //TODO
-
+    delete client;
+    cashier->free();
 }

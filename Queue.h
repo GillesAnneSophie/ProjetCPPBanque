@@ -20,6 +20,7 @@ private:
     int maxLength;
     double integral; //TODO calcul de l'intégrale
     Bank * bank;
+    double waitingTime;
 
 public:
     Queue(Bank * bank);
@@ -29,6 +30,8 @@ public:
     void addClient(Client client);
     bool isEmpty();
     Client remove();
+    void setWaitingTime(double waitingTime);
+    double getWaitingTime();
 };
 
 #endif

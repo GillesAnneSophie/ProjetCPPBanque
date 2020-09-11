@@ -11,18 +11,18 @@ Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
 void Arrival::process() {
     Client client1(simulation->getCurrentTime());
     this->client = &client1;
-    Cashier cashier1 = simulation->getBank().getFirstAvailableCashier();
+    Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
 
-    if(cashier1.getAverageServiceTime() != NULL){//TODO ? à voir si cette condition est ok
-        this->cashier = &cashier1;
-        cashier1.serveClient(client1);
+    if(cashier1 != nullptr){
+        this->cashier = cashier1;
+        cashier1->serveClient(client1);
     }
     else{
         simulation->getBank().getQueue().addClient(client1);
     }
     double nextTime = simulation->getCurrentTime(); //TODO générer le random avec poisson : random.next(simu.tempsMoyenArrivee);
     if(nextTime <= simulation->getPlannedDuration()){
-        Arrival a(nextTime, (Simulation &) simulation);//TODO ok ?
+        Arrival a(nextTime, *simulation);
         simulation->addEvent(a);
     }
 }

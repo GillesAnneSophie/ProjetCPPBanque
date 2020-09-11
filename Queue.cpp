@@ -6,16 +6,16 @@
 
 Queue::Queue(Bank * bank) {
     this->bank = bank;
-    maxLength = 0;
-    //TODO initialiser queue ?
+    maxLength = integral = 0;
 }
 
 double Queue::getAverageLength() {
-    //TODO
+    //TODO intégrale
+    return 0;
 }
 
 double Queue::getAverageWaitingTime() {
-    //TODO
+    return waitingTime/bank->getClientsCount();
 }
 
 int Queue::getMaxLength() {
@@ -28,11 +28,22 @@ bool Queue::isEmpty() {
 
 void Queue::addClient(Client client) {
     clientQueue.push_back(client);
-    //TODO
+    int currentSize = clientQueue.size();
+    if(currentSize > maxLength){
+        maxLength = currentSize;
+    }
 }
 
 Client Queue::remove() {
     Client client = clientQueue.front();
     clientQueue.pop_front();
     return client;
+}
+
+void Queue::setWaitingTime(double waitingTime) {
+    this->waitingTime = waitingTime;
+}
+
+double Queue::getWaitingTime() {
+    return waitingTime;
 }

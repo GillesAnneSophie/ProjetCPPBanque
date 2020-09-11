@@ -4,14 +4,19 @@
 
 #include "Bank.h"
 
-Bank::Bank(double averageServiceTime, int cashiersCount) {
+Bank::Bank(double averageServiceTime, int cashiersCount, Simulation * simulation) {
     this->cashiersCount = cashiersCount;
-    //TODO
+    this->simulation = simulation;
     queue = new Queue(this);
     cashiers = new Cashier*[cashiersCount];
     for(int i=0 ; i<cashiersCount ; i++){
-        cashiers[i] = new Cashier(averageServiceTime, this);
+        cashiers[i] = new Cashier(averageServiceTime, *this);
     }
+}
+
+Bank::~Bank() {
+    delete[] cashiers;
+    delete queue;
 }
 
 int Bank::getCashiersCount() {
@@ -22,16 +27,21 @@ int Bank::getClientsCount() {
     return clientsCount;
 }
 
-Cashier Bank::getFirstAvailableCashier() {
+Cashier* Bank::getFirstAvailableCashier() {
     int i = 0;
     while(i < cashiersCount){
         if(cashiers[i]->isAvailable()){
-            return *cashiers[i];
+            return cashiers[i];
         }
         i++;
     }
+    return NULL;
 }
 
-Queue & Bank::getQueue() {
+Queue& Bank::getQueue() {
     return *queue;
+}
+
+Simulation& Bank::getSimulation() {
+    return *simulation;
 }

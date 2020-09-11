@@ -12,9 +12,10 @@ class Departure : public Event{
 private:
     Simulation * simulation;
     Client * client;
+    Cashier * cashier;
 
 public:
-    Departure(double time, Client & client, Simulation & simulation);
+    Departure(double time, Client & client, Cashier & cashier, Simulation & simulation);
     void process();
 };
 
