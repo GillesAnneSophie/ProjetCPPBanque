@@ -38,6 +38,11 @@ void Arrival::process() {
     // this->client = &client1;
     this->client = client1;
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
+    //cashier->isAvailable() = false;
+
+    if(simulation->DEBUG) {
+        //cout << "> Arrival::process() cashier1 : " << cashier->isAvailable() << endl;
+    }
 
     if(cashier1 != nullptr){
         this->cashier = cashier1;

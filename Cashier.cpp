@@ -58,6 +58,7 @@ void Cashier::serveClient(Client & client) {
     if(!bank->getQueue().isEmpty()){
         Client newClient = bank->getQueue().remove();
         this->serveClient(newClient);
+        this->available = false;
     }
 
     if(bank->getSimulation().DEBUG){

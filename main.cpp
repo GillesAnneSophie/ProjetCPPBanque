@@ -10,7 +10,8 @@ using namespace std;
 int main() {
     int plannedDuration = 20;
     int averageArrivalTime = 1;
-    int averageServiceTime = 10;
+    // int averageServiceTime = 10;
+    int averageServiceTime = 2;
     int cashiersCount = 5;
 
     cout << "----- Begin Simulation -----" << endl
