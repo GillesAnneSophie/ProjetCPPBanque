@@ -33,7 +33,7 @@ public:
      * Bank Copy-Constructor
      * @param bank
      */
-    Bank(const Bank & bank)
+    Bank(const Bank & bank);
     /**
      * Bank Destructor
      */
