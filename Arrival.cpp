@@ -8,6 +8,12 @@ Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
     this->simulation = &simulation;
 }
 
+Arrival::Arrival(const Arrival & arrival) : Event(arrival) {
+    this->cashier = arrival.cashier;
+    this->client = arrival.client;
+    this->simulation = arrival.simulation;
+}
+
 void Arrival::process() {
     Client client1(simulation->getCurrentTime());
     this->client = &client1;

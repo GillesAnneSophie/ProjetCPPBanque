@@ -9,6 +9,11 @@ Departure::Departure(double time, Client & client, Simulation & simulation) : Ev
     this->client = &client;
 }
 
+Departure::Departure(const Departure & departure) : Event(departure.time) {
+    this->simulation = departure.simulation;
+    this->client = departure.client;
+}
+
 void Departure::process() {
     //TODO
 
