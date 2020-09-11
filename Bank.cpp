@@ -40,10 +40,6 @@ Bank::Bank(const Bank & bank) {
     this->clientsCount = bank.clientsCount;
 }
 
-int Bank::getCashiersCount() {
-    return cashiersCount;
-}
-
 int Bank::getClientsCount() {
     return clientsCount;
 }

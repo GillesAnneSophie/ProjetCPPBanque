@@ -21,8 +21,20 @@ private:
     Simulation * simulation;
 
 public:
+    /**
+     * Arrival Constructor
+     * @param time
+     * @param simulation
+     */
     Arrival(double time, Simulation & simulation);
+    /**
+     * Arrival Copy-Constructor
+     * @param arrival
+     */
     Arrival(const Arrival & arrival);
+    /**
+     * Launch Arrival's process
+     */
     void process() override;
 };
 

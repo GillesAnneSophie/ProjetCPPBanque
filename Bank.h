@@ -22,15 +22,51 @@ private:
     Simulation * simulation;
 
 public:
+    /**
+     * Bank Constructor
+     * @param averageServiceTime
+     * @param cashiersCount
+     * @param simulation
+     */
     Bank(double averageServiceTime, int cashiersCount, Simulation & simulation);
-    Bank(const Bank & bank);
+    /**
+     * Bank Copy-Constructor
+     * @param bank
+     */
+    Bank(const Bank & bank)
+    /**
+     * Bank Destructor
+     */
     ~Bank();
-    int getCashiersCount();
+    /**
+     * Get clients count
+     * @return clientsCount
+     */
     int getClientsCount();
+    /**
+     * Add a client to clientsCount
+     */
     void addClientToCount();
+    /**
+     * Get the first (from 0 to cashiersCount) available cashier
+     * @return cashier|null
+     */
     Cashier* getFirstAvailableCashier();
+    /**
+     * Get queue
+     * @return queue
+     */
     Queue & getQueue();
+    /**
+     * Get simulation
+     * @return simulation
+     */
     Simulation & getSimulation();
+    /**
+     * Get the cashier at given place in cashiers
+     * @param index
+     * @return cashier
+     */
     Cashier& getCashier(int index);
 };
 

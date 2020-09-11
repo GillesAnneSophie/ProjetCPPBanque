@@ -10,8 +10,20 @@ private:
     double arrivalTime;
 
 public:
+    /**
+     * Client Constructor
+     * @param arrivalTime
+     */
     Client(double arrivalTime);
+    /**
+     * Client Copy-Constructor
+     * @param client
+     */
     Client(const Client & client);
+    /**
+     * Get arrival time
+     * @return arrivalTime
+     */
     double getArrivalTime();
 };
 

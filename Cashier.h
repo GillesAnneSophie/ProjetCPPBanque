@@ -20,14 +20,45 @@ private:
     double occupiedTime;
 
 public:
+    /**
+     * Cashier Constructor
+     * @param averageServiceTime
+     * @param bank
+     */
     Cashier(double averageServiceTime, Bank & bank);
+    /**
+     * Cashier Copy-Constructor
+     * @param cashier
+     */
     Cashier(const Cashier & cashier);
-    double getAverageServiceTime();
+    /**
+     * Get clients count
+     * @return clientsCount
+     */
     int getClientsCount();
+    /**
+     * Get occupation rate
+     * @return occupationRate
+     */
     double getOccupationRate();
+    /**
+     * Get available
+     * @return available
+     */
     bool isAvailable();
+    /**
+     * Serve the given client
+     * @param client
+     */
     void serveClient(Client & client);
+    /**
+     * Set available
+     */
     void free();
+    /**
+     * Get bank
+     * @return bank
+     */
     Bank & getBank();
 };
 

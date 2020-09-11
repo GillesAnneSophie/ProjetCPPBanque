@@ -10,9 +10,24 @@ private:
     double time;
 
 public:
+    /**
+     * Event Constructor
+     * @param time
+     */
     Event(double time);
+    /**
+     * Event Copy-Constructor
+     * @param event
+     */
     Event(const Event & event);
+    /**
+     * Launch Event's process
+     */
     virtual void process() = 0;
+    /**
+     * Get time
+     * @return time
+     */
     double getTime();
 };
 

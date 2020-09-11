@@ -32,10 +32,6 @@ int Cashier::getClientsCount() {
     return clientsCount;
 }
 
-double Cashier::getAverageServiceTime() {
-    return averageServiceTime;
-}
-
 double Cashier::getOccupationRate() {
     double rd = bank->getSimulation().getRealDuration();
     return (occupiedTime/rd)*100;
@@ -54,7 +50,7 @@ void Cashier::serveClient(Client & client) {
     bank->addClientToCount();
 
     Poisson::init();
-    double random = Poisson::next();
+    double random = Poisson::next(averageServiceTime);
     occupiedTime += random;
 
     Departure departure(bank->getSimulation().getCurrentTime(), client, *this);
@@ -62,6 +58,11 @@ void Cashier::serveClient(Client & client) {
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;
+    }
+
+    if(!bank->getQueue().isEmpty()){
+        Client newClient = bank->getQueue().remove();
+        this->serveClient(newClient);
     }
 }
 

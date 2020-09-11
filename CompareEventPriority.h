@@ -9,6 +9,12 @@
 
 class CompareEventPriority{
 public:
+    /**
+     * Compare events priority
+     * @param e1
+     * @param e2
+     * @return 0|1
+     */
     int operator() (Event * & e1, Event * & e2);
 };
 

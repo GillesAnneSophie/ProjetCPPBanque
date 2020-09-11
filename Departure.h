@@ -16,8 +16,21 @@ private:
     Cashier * cashier;
 
 public:
+    /**
+     * Departure Constructor
+     * @param time
+     * @param client
+     * @param cashier
+     */
     Departure(double time, Client & client, Cashier & cashier);
+    /**
+     * Departure Copy-Constructor
+     * @param departure
+     */
     Departure(const Departure & departure);
+    /**
+     * Launch Departure's process
+     */
     void process() override;
 };
 

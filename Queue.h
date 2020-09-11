@@ -23,13 +23,45 @@ private:
     double waitingTime;
 
 public:
+    /**
+     * Queue Constructor
+     * @param bank
+     */
     Queue(Bank & bank);
+    /**
+     * Queue Copy-Constructor
+     * @param queue
+     */
     Queue(const Queue & queue);
+    /**
+     * Get max length
+     * @return maxLength
+     */
     int getMaxLength();
+    /**
+     * Get average length
+     * @return averageLength
+     */
     double getAverageLength();
+    /**
+     * Get average waiting time
+     * @return averageWaitingTime
+     */
     double getAverageWaitingTime();
+    /**
+     * Add client to clientQueue
+     * @param client
+     */
     void addClient(Client & client);
+    /**
+     * Get is clientQueue empty
+     * @return true|false
+     */
     bool isEmpty();
+    /**
+     * Remove first client from clientQueue and returns it
+     * @return Client
+     */
     Client remove();
 };
 
