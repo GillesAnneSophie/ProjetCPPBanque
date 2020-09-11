@@ -23,7 +23,7 @@ private:
     double waitingTime;
 
 public:
-    Queue(Bank * bank);
+    Queue(Bank & bank);
     Queue(const Queue & queue);
     int getMaxLength();
     double getAverageLength();
@@ -31,8 +31,6 @@ public:
     void addClient(Client & client);
     bool isEmpty();
     Client remove();
-    void setWaitingTime(double waitingTime);
-    double getWaitingTime();
 };
 
 #endif

@@ -4,11 +4,22 @@
 
 #include "Queue.h"
 
-Queue::Queue(Bank * bank) {
-    this->bank = bank;
+#include <iostream>
+using namespace std;
+
+Queue::Queue(Bank & bank) {
+    if(bank.getSimulation().DEBUG){
+        cout << "> Queue()" << endl;
+    }
+
+    this->bank = &bank;
     maxLength = 0;
     integral = 0;
     waitingTime = 0;
+
+    if(bank.getSimulation().DEBUG){
+        cout << "< Queue()" << endl;
+    }
 }
 
 Queue::Queue(const Queue & queue) {
@@ -36,26 +47,32 @@ bool Queue::isEmpty() {
 }
 
 void Queue::addClient(Client & client) {
+    if(bank->getSimulation().DEBUG){
+        cout << "> addClient()" << endl;
+    }
+
     clientQueue.push_back(client);
     int currentSize = clientQueue.size();
     if(currentSize > maxLength){
         maxLength = currentSize;
     }
+
+    if(bank->getSimulation().DEBUG){
+        cout << "< addClient()" << endl;
+    }
 }
 
 Client Queue::remove() {
+    if(bank->getSimulation().DEBUG){
+        cout << "- remove()" << endl;
+    }
+
     Client client = clientQueue.front();
 
-    integral += clientQueue.size()*(bank->getSimulation().getCurrentTime()-client.getArrivalTime());
+    double clientWaitingTime = bank->getSimulation().getCurrentTime()-client.getArrivalTime();
+    waitingTime += clientWaitingTime;
+    integral += clientQueue.size()*(clientWaitingTime);
 
     clientQueue.pop_front();
     return client;
-}
-
-void Queue::setWaitingTime(double waitingTime) {
-    this->waitingTime = waitingTime;
-}
-
-double Queue::getWaitingTime() {
-    return waitingTime;
 }

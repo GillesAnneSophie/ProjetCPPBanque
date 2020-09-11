@@ -23,7 +23,7 @@ private:
 public:
     Arrival(double time, Simulation & simulation);
     Arrival(const Arrival & arrival);
-    void process();
+    void process() override;
 };
 
 #endif

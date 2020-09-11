@@ -4,7 +4,12 @@
 
 #include "Event.h"
 
+#include <iostream>
+using namespace std;
+
 Event::Event(double time) {
+    cout << "- Event()" << endl;
+
     this->time = time;
 }
 

@@ -4,9 +4,13 @@
 
 #include "Client.h"
 
-Client::Client(double arrivalTime) {
-    this->arrivalTime = arrivalTime;
+#include <iostream>
+using namespace std;
 
+Client::Client(double arrivalTime) {
+    cout << "- Client()" << endl;
+
+    this->arrivalTime = arrivalTime;
 }
 
 Client::Client(const Client & clientObj) {

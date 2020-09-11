@@ -28,6 +28,7 @@ public:
     bool isAvailable();
     void serveClient(Client & client);
     void free();
+    Bank & getBank();
 };
 
 #endif

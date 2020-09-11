@@ -18,7 +18,7 @@ private:
 public:
     Departure(double time, Client & client, Cashier & cashier);
     Departure(const Departure & departure);
-    void process();
+    void process() override;
 };
 
 #endif

@@ -4,10 +4,17 @@
 
 #include "Arrival.h"
 
+#include <iostream>
+using namespace std;
+
 Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
+    cout << "> Arrival()" << endl;
+
     this->simulation = &simulation;
     this->cashier = nullptr;
     this->client = nullptr;
+
+    cout << "< Arrival()" << endl;
 }
 
 Arrival::Arrival(const Arrival & arrival) : Event(arrival) {
@@ -17,6 +24,8 @@ Arrival::Arrival(const Arrival & arrival) : Event(arrival) {
 }
 
 void Arrival::process() {
+    cout << "> Arrival::process()" << endl;
+
     Client client1(simulation->getCurrentTime());
     this->client = &client1;
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
@@ -36,4 +45,6 @@ void Arrival::process() {
         Arrival a(nextTime, *simulation);
         simulation->addEvent(a);
     }
+
+    cout << "< Arrival::process()" << endl;
 }

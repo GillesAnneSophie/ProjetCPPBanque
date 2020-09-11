@@ -4,18 +4,30 @@
 
 #include "Bank.h"
 
-Bank::Bank(double averageServiceTime, int cashiersCount, Simulation * simulation) {
+Bank::Bank(double averageServiceTime, int cashiersCount, Simulation & simulation) {
+    if(simulation.DEBUG){
+        cout << "> Bank()" << endl;
+    }
+
     this->cashiersCount = cashiersCount;
-    this->simulation = simulation;
+    this->simulation = &simulation;
     this->clientsCount = 0;
-    queue = new Queue(this);
+    queue = new Queue(*this);
     cashiers = new Cashier*[cashiersCount];
     for(int i=0 ; i<cashiersCount ; i++){
         cashiers[i] = new Cashier(averageServiceTime, *this);
     }
+
+    if(simulation.DEBUG){
+        cout << "< Bank()" << endl;
+    }
 }
 
 Bank::~Bank() {
+    if(simulation->DEBUG){
+        cout << "- ~Bank()" << endl;
+    }
+
     delete[] cashiers;
     delete queue;
 }
@@ -37,10 +49,17 @@ int Bank::getClientsCount() {
 }
 
 void Bank::addClientToCount() {
+    if(simulation->DEBUG){
+        cout << "- addClientToCount()" << endl;
+    }
     clientsCount++;
 }
 
 Cashier* Bank::getFirstAvailableCashier() {
+    if(simulation->DEBUG){
+        cout << "- getFirstAvailableCashier()" << endl;
+    }
+
     int i = 0;
     while(i < cashiersCount){
         if(cashiers[i]->isAvailable()){
@@ -57,4 +76,8 @@ Queue& Bank::getQueue() {
 
 Simulation& Bank::getSimulation() {
     return *simulation;
+}
+
+Cashier& Bank::getCashier(int index) {
+    return *cashiers[index];
 }

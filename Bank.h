@@ -22,7 +22,7 @@ private:
     Simulation * simulation;
 
 public:
-    Bank(double averageServiceTime, int cashiersCount, Simulation * simulation);
+    Bank(double averageServiceTime, int cashiersCount, Simulation & simulation);
     Bank(const Bank & bank);
     ~Bank();
     int getCashiersCount();
@@ -31,6 +31,7 @@ public:
     Cashier* getFirstAvailableCashier();
     Queue & getQueue();
     Simulation & getSimulation();
+    Cashier& getCashier(int index);
 };
 
 #endif

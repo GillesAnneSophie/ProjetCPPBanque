@@ -3,10 +3,15 @@
 #include <unistd.h>
 #include "Poisson.h"
 
+#include <iostream>
+using namespace std;
+
 void Poisson::init(int seed) {
     srand(seed ? seed : getpid());
 }
 
 double Poisson::next(double moy) {
+    cout << "- Poisson::next" << endl;
+
     return -log(((double)rand()/RAND_MAX))*moy;
 }

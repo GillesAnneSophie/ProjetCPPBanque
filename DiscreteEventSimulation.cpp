@@ -4,9 +4,16 @@
 
 #include "DiscreteEventSimulation.h"
 
+#include <iostream>
+using namespace std;
+
 DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
+    cout << "> DiscreteEventSimulation()" << endl;
+
     this->startTime = startTime;
     this->currentTime = startTime;
+
+    cout << "< DiscreteEventSimulation()" << endl;
 }
 
 DiscreteEventSimulation::DiscreteEventSimulation(const DiscreteEventSimulation & discreteEventSimulation) {
@@ -20,10 +27,19 @@ double DiscreteEventSimulation::getCurrentTime() {
 }
 
 void DiscreteEventSimulation::addEvent(Event & event) {
+    cout << "- addEvent()" << endl;
     eventQueue.push(&event);
 }
-
 void DiscreteEventSimulation::launch() {
-    //TODO ?
-    eventQueue.pop();
+    cout << "> launch()" << endl;
+
+    if(!eventQueue.empty() && eventQueue.top()->getTime() == currentTime){
+        eventQueue.top()->process();//TODO PLANTE ICI
+        eventQueue.pop();
+    }
+    else{
+        currentTime++;
+    }
+
+    cout << "< launch()" << endl;
 }

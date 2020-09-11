@@ -4,17 +4,25 @@
 
 #include "Simulation.h"
 
+#include <iostream>
+using namespace std;
+
 Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) : DiscreteEventSimulation(0) {
-    bank = new Bank(averageServiceTime, cashiersCount, this);
+    if(DEBUG){
+        cout << "> Simulation()" << endl;
+    }
+
+    bank = new Bank(averageServiceTime, cashiersCount, *this);
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
     this->realDuration = plannedDuration;
 
-    Poisson::init();
-    double random = Poisson::next(averageArrivalTime);
-    double nextTime = this->getCurrentTime() + random;
-    Arrival a(nextTime, *this);
+    Arrival a(0, *this);
     this->addEvent(a);
+
+    if(DEBUG){
+        cout << "< Simulation()" << endl;
+    }
 }
 
 Simulation::Simulation(const Simulation & simulation) : DiscreteEventSimulation(0) {
@@ -25,6 +33,9 @@ Simulation::Simulation(const Simulation & simulation) : DiscreteEventSimulation(
 }
 
 double Simulation::getAverageArrivalTime() {
+    if(DEBUG){
+        cout << "- getAverageArrivalTime()" << endl;
+    }
     return averageArrivalTime;
 }
 

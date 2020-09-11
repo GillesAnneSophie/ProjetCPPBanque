@@ -26,6 +26,8 @@ public:
     Bank & getBank();
     void setRealDuration(double realDuration);
     double getRealDuration();
+
+    bool DEBUG = true;
 };
 
 #endif

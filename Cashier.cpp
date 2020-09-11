@@ -5,11 +5,19 @@
 #include "Cashier.h"
 
 Cashier::Cashier(double averageServiceTime, Bank & bank) {
+    if(bank.getSimulation().DEBUG){
+        cout << "> Cashier()" << endl;
+    }
+
     this->bank = &bank;
     this->averageServiceTime = averageServiceTime;
     this->available = true;
     clientsCount = 0;
     occupiedTime = 0;
+
+    if(bank.getSimulation().DEBUG){
+        cout << "< Cashier()" << endl;
+    }
 }
 
 Cashier::Cashier(const Cashier & cashier) {
@@ -38,6 +46,10 @@ bool Cashier::isAvailable() {
 }
 
 void Cashier::serveClient(Client & client) {
+    if(bank->getSimulation().DEBUG){
+        cout << "> serveClient()" << endl;
+    }
+
     clientsCount++;
     bank->addClientToCount();
 
@@ -45,12 +57,21 @@ void Cashier::serveClient(Client & client) {
     double random = Poisson::next();
     occupiedTime += random;
 
-    //TODO random loi de poisson avec un wait()
-
     Departure departure(bank->getSimulation().getCurrentTime(), client, *this);
     bank->getSimulation().addEvent(departure);
+
+    if(bank->getSimulation().DEBUG){
+        cout << "< serveClient()" << endl;
+    }
 }
 
 void Cashier::free() {
+    if(bank->getSimulation().DEBUG){
+        cout << "- free()" << endl;
+    }
     available = true;
+}
+
+Bank& Cashier::getBank() {
+    return *bank;
 }
