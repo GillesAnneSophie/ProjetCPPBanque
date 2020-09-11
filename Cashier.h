@@ -20,6 +20,7 @@ private:
 
 public:
     Cashier(double averageServiceTime, Bank & bank);
+    Cashier(const Cashier & cashier);
     double getAverageServiceTime();
     int getClientsCount();
     double getOccupationRate();

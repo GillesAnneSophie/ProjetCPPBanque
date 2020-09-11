@@ -17,6 +17,7 @@ private:
 
 public:
     Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount);
+    Simulation(const Simulation & simulation);
     double getPlannedDuration();
     double getAverageArrivalTime();
     Bank & getBank();

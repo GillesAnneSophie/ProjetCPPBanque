@@ -16,6 +16,7 @@ private:
 
 public:
     Departure(double time, Client & client, Cashier & cashier, Simulation & simulation);
+    Departure(const Departure & departure);
     void process();
 };
 

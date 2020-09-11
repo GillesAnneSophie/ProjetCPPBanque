@@ -22,6 +22,7 @@ private:
 
 public:
     DiscreteEventSimulation(double startTime);
+    DiscreteEventSimulation(const DiscreteEventSimulation & discreteEventSimulation);
     void addEvent(Event & event);
     double getCurrentTime();
     void launch();

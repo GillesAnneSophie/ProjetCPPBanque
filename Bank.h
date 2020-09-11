@@ -23,6 +23,7 @@ private:
 
 public:
     Bank(double averageServiceTime, int cashiersCount, Simulation * simulation);
+    Bank(const Bank & bank);
     ~Bank();
     int getCashiersCount();
     int getClientsCount();

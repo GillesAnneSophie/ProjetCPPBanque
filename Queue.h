@@ -24,6 +24,7 @@ private:
 
 public:
     Queue(Bank * bank);
+    Queue(const Queue & queue);
     int getMaxLength();
     double getAverageLength();
     double getAverageWaitingTime();

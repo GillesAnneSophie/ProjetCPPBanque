@@ -11,6 +11,7 @@ private:
 
 public:
     Client(double arrivalTime);
+    Client(const Client & client);
     double getArrivalTime();
 };
 

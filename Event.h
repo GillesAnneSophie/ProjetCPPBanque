@@ -11,6 +11,7 @@ private:
 
 public:
     Event(double time);
+    Event(const Event & event);
     virtual void process() = 0;
     double getTime();
 };
