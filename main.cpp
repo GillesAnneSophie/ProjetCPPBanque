@@ -31,7 +31,7 @@ int main() {
          << "total clients count: " << simulation.getBank().getClientsCount() << endl
          << "queue max length: " << simulation.getBank().getQueue().getMaxLength() << endl
          << "queue average length: " << simulation.getBank().getQueue().getAverageLength() << endl
-         << "queue average length: " << simulation.getBank().getQueue().getAverageWaitingTime() << endl;
+         << "queue average waiting time: " << simulation.getBank().getQueue().getAverageWaitingTime() << endl;
 
     Bank bank = simulation.getBank();
     for(int i=0 ; i<cashiersCount ; i++){
