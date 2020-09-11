@@ -9,6 +9,14 @@ Queue::Queue(Bank * bank) {
     maxLength = integral = 0;
 }
 
+Queue::Queue(const Queue & queue) {
+    this->bank = queue.bank;
+    this->clientQueue = queue.clientQueue;
+    this->integral = queue.integral;
+    this->maxLength = queue.maxLength;
+    //TODO initialiser queue ?
+}
+
 double Queue::getAverageLength() {
     //TODO intégrale
     return 0;
