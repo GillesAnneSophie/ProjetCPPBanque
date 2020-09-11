@@ -7,6 +7,7 @@
 
 #include "Bank.h"
 #include "Client.h"
+#include "Departure.h"
 
 class Bank;
 
