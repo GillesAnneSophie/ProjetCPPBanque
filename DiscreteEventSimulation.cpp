@@ -3,15 +3,6 @@
  */
 
 #include "DiscreteEventSimulation.h"
-#include <iostream>
-
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
-
-using namespace std;
 
 DiscreteEventSimulation::DiscreteEventSimulation(double startTime) {
     this->startTime = startTime;
@@ -33,18 +24,8 @@ void DiscreteEventSimulation::addEvent(Event * event) {
 }
 
 void DiscreteEventSimulation::launch() {
-#ifdef _WIN32
-    Sleep(3000);
-#else
-    sleep(3);
-#endif
-
     while(!eventQueue.empty()) {
         Event * currentEvent = eventQueue.top();
-
-        /*cout << endl << "\tcurrentTime=" << currentTime << endl
-             << "\teventQueue size : " << eventQueue.size() << endl
-             << "\teventQueue top time : " << (currentEvent->getTime()) << endl;*/
 
         if (currentEvent->getTime() == currentTime) {
             currentEvent->process();
@@ -56,13 +37,6 @@ void DiscreteEventSimulation::launch() {
             }
         } else {
             currentTime++;
-            //cerr << "Error: nothing to do now: " << currentTime << endl;
         }
     }
-
-#ifdef _WIN32
-    Sleep(3000);
-#else
-    sleep(3);
-#endif
 }

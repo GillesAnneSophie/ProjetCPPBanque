@@ -8,10 +8,10 @@
 using namespace std;
 
 int main() {
-    int plannedDuration = 30;
-    int averageArrivalTime = 2;
-    int averageServiceTime = 6;
-    int cashiersCount = 2;
+    int plannedDuration = 1000;
+    int averageArrivalTime = 5;
+    int averageServiceTime = 15;
+    int cashiersCount = 4; // 3 = > 100%
 
     cout << "----- Begin Simulation -----" << endl
          << "plannedDuration: " << plannedDuration << endl
@@ -23,7 +23,7 @@ int main() {
 
     cout << "----- Launch Simulation -----" << endl;
     simulation.launch();
-    cout << "----- End Simulation -----" << endl;
+    cout << "----- End Launch Simulation -----" << endl;
 
     simulation.setRealDuration(simulation.getCurrentTime());
 
@@ -41,6 +41,8 @@ int main() {
              << "\toccupiedTime: " << cashier.getOccupiedTime() << endl
              << "\tclientsCount: " << cashier.getClientsCount() << endl;
     }
+
+    cout << "----- End Simulation -----" << endl;
 
     return 0;
 }
