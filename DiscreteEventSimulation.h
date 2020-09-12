@@ -11,8 +11,7 @@
 #include "Event.h"
 #include "CompareEventPriority.h"
 
-using namespace std;
-
+using namespace std; 
 
 class DiscreteEventSimulation{
 private:

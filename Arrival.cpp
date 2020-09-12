@@ -5,13 +5,15 @@
 #include "Arrival.h"
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
     if(simulation.DEBUG) {
         cout << "> Arrival()" << endl;
     }
-    cout << "\tDeparture.time=" << time << endl;
+    // cout << "\tDeparture.time=" << time << endl;
+    cout << "\tArrival.time=" << time << endl;
 
     this->simulation = &simulation;
     this->cashier = nullptr;
@@ -54,7 +56,10 @@ void Arrival::process() {
 
     Poisson::init();
     double random = Poisson::next(simulation->getAverageArrivalTime());
-    double nextTime = simulation->getCurrentTime() + random;
+    double nextTime = ceil(simulation->getCurrentTime() + random);
+    //double nextTime = simulation->getCurrentTime() + random;
+    cout << "\trandom : " << random << endl;
+    cout << "\tnextTime : " << nextTime << endl;
 
     if(nextTime <= simulation->getPlannedDuration()){
         simulation->addEvent(new Arrival(nextTime, *simulation));
