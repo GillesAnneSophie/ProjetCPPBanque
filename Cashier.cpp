@@ -50,20 +50,15 @@ void Cashier::serveClient(Client & client) {
 
     this->available = false;
     clientsCount++;
-    bank->addClientToCount();
 
-    Poisson::init();
+    Poisson::init(rand());
     double random = Poisson::next(averageServiceTime);
-    double nextTime = ceil(bank->getSimulation().getCurrentTime() + random);
-    occupiedTime += ceil(random);
-    cout << " ";
+    double nextTime = ceil(random);
+    if(nextTime < bank->getSimulation().getCurrentTime()){
+        nextTime += bank->getSimulation().getCurrentTime();
+    }
 
     bank->getSimulation().addEvent(new Departure(nextTime, client, *this));
-
-    /*if(!bank->getQueue().isEmpty()){
-        Client newClient = bank->getQueue().remove();
-        this->serveClient(newClient);
-    }*/
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;
@@ -75,8 +70,21 @@ void Cashier::free() {
         cout << "- Cashier::free()" << endl;
     }
     available = true;
+
+    if(!bank->getQueue().isEmpty()){
+        Client newClient = bank->getQueue().remove();
+        this->serveClient(newClient);
+    }
 }
 
 Bank& Cashier::getBank() {
     return *bank;
+}
+
+void Cashier::addOccupiedTime(double time) {
+    occupiedTime += time;
+}
+
+double Cashier::getOccupiedTime() {
+    return occupiedTime;
 }

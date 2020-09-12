@@ -60,6 +60,16 @@ public:
      * @return bank
      */
     Bank & getBank();
+    /**
+     * Add given occupied time to occupiedTime
+     * @param time
+     */
+    void addOccupiedTime(double time);
+    /**
+     * Get occupied time
+     * @return occupiedTime
+     */
+    double getOccupiedTime();
 };
 
 #endif

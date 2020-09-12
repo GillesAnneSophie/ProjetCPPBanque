@@ -42,9 +42,9 @@ void DiscreteEventSimulation::launch() {
     while(!eventQueue.empty()) {
         Event * currentEvent = eventQueue.top();
 
-        cout << "\tcurrentTime=" << currentTime << endl
+        /*cout << endl << "\tcurrentTime=" << currentTime << endl
              << "\teventQueue size : " << eventQueue.size() << endl
-             << "\teventQueue top time : " << (currentEvent->getTime()) << endl;
+             << "\teventQueue top time : " << (currentEvent->getTime()) << endl;*/
 
         if (currentEvent->getTime() == currentTime) {
             currentEvent->process();
@@ -56,7 +56,7 @@ void DiscreteEventSimulation::launch() {
             }
         } else {
             currentTime++;
-            cerr << "Error: nothing to do now: " << currentTime << endl;
+            //cerr << "Error: nothing to do now: " << currentTime << endl;
         }
     }
 

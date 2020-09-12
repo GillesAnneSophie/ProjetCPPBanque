@@ -8,9 +8,9 @@
 using namespace std;
 
 int main() {
-    int plannedDuration = 20;
-    int averageArrivalTime = 3;
-    int averageServiceTime = 10;
+    int plannedDuration = 30;
+    int averageArrivalTime = 2;
+    int averageServiceTime = 6;
     int cashiersCount = 2;
 
     cout << "----- Begin Simulation -----" << endl
@@ -38,6 +38,7 @@ int main() {
         Cashier cashier = bank.getCashier(i);
         cout << "Cashier " << i << ": " << endl
              << "\toccupationRate: " << cashier.getOccupationRate() << "%" << endl
+             << "\toccupiedTime: " << cashier.getOccupiedTime() << endl
              << "\tclientsCount: " << cashier.getClientsCount() << endl;
     }
 

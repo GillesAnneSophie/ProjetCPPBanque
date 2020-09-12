@@ -35,6 +35,7 @@ void Arrival::process() {
 
     Client * client1 = new Client(simulation->getCurrentTime());
     this->client = client1;
+    simulation->getBank().addClientToCount();
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
 
     if(cashier1 != nullptr){
@@ -45,10 +46,12 @@ void Arrival::process() {
         simulation->getBank().getQueue().addClient(*client1);
     }
 
-    Poisson::init();
+    Poisson::init(rand());
     double random = Poisson::next(simulation->getAverageArrivalTime());
-    double nextTime = ceil(simulation->getCurrentTime() + random);
-    cout << " ";
+    double nextTime = ceil(random);
+    if(nextTime < simulation->getCurrentTime()){
+        nextTime += simulation->getCurrentTime();
+    }
 
     if(nextTime <= simulation->getPlannedDuration()){
         simulation->addEvent(new Arrival(nextTime, *simulation));

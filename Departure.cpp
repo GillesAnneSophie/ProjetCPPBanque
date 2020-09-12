@@ -27,6 +27,10 @@ void Departure::process() {
         cout << "> Departure::process()" << endl;
     }
 
+    int occupiedTime = (int) (cashier->getBank().getSimulation().getCurrentTime()-client->getArrivalTime());
+    cout << "occupiedTime= " << occupiedTime << endl;
+    cashier->addOccupiedTime(occupiedTime);
+
     delete client;
     cashier->free();
 

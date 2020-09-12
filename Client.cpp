@@ -15,7 +15,3 @@ Client::Client(const Client & clientObj) {
 double Client::getArrivalTime() {
     return arrivalTime;
 }
-
-double Client::setArrivalTime(double arrivalTime) {
-    this->arrivalTime = arrivalTime;
-}
