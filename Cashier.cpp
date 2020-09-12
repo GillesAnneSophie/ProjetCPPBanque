@@ -4,6 +4,8 @@
 
 #include "Cashier.h"
 
+#include <cmath>
+
 Cashier::Cashier(double averageServiceTime, Bank & bank) {
     if(bank.getSimulation().DEBUG){
         cout << "> Cashier()" << endl;
@@ -46,20 +48,22 @@ void Cashier::serveClient(Client & client) {
         cout << "> serveClient()" << endl;
     }
 
+    this->available = false;
     clientsCount++;
     bank->addClientToCount();
 
     Poisson::init();
     double random = Poisson::next(averageServiceTime);
-    occupiedTime += random;
+    double nextTime = ceil(bank->getSimulation().getCurrentTime() + random);
+    occupiedTime += ceil(random);
+    cout << " ";
 
-    bank->getSimulation().addEvent(new Departure(bank->getSimulation().getCurrentTime(), client, *this));
+    bank->getSimulation().addEvent(new Departure(nextTime, client, *this));
 
-    if(!bank->getQueue().isEmpty()){
+    /*if(!bank->getQueue().isEmpty()){
         Client newClient = bank->getQueue().remove();
         this->serveClient(newClient);
-        this->available = false;
-    }
+    }*/
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;

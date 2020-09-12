@@ -8,7 +8,6 @@ Departure::Departure(double time, Client & client, Cashier & cashier) : Event(ti
     if(cashier.getBank().getSimulation().DEBUG){
         cout << "> Departure()" << endl;
     }
-    cout << "\tDeparture.time=" << time << endl;
 
     this->client = &client;
     this->cashier = &cashier;

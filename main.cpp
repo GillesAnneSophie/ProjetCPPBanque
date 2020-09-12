@@ -9,10 +9,9 @@ using namespace std;
 
 int main() {
     int plannedDuration = 20;
-    int averageArrivalTime = 1;
-    // int averageServiceTime = 10;
-    int averageServiceTime = 2;
-    int cashiersCount = 5;
+    int averageArrivalTime = 3;
+    int averageServiceTime = 10;
+    int cashiersCount = 2;
 
     cout << "----- Begin Simulation -----" << endl
          << "plannedDuration: " << plannedDuration << endl

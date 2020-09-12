@@ -3,9 +3,6 @@
 #include <unistd.h>
 #include "Poisson.h"
 
-#include <iostream>
-using namespace std;
-
 void Poisson::init(int seed) {
     srand(seed ? seed : getpid());
 }

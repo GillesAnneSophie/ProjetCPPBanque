@@ -12,8 +12,6 @@ Arrival::Arrival(double time, Simulation & simulation) : Event(time) {
     if(simulation.DEBUG) {
         cout << "> Arrival()" << endl;
     }
-    // cout << "\tDeparture.time=" << time << endl;
-    cout << "\tArrival.time=" << time << endl;
 
     this->simulation = &simulation;
     this->cashier = nullptr;
@@ -35,16 +33,9 @@ void Arrival::process() {
         cout << "> Arrival::process()" << endl;
     }
 
-    //Client client1(simulation->getCurrentTime());
     Client * client1 = new Client(simulation->getCurrentTime());
-    // this->client = &client1;
     this->client = client1;
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();
-    //cashier->isAvailable() = false;
-
-    if(simulation->DEBUG) {
-        //cout << "> Arrival::process() cashier1 : " << cashier->isAvailable() << endl;
-    }
 
     if(cashier1 != nullptr){
         this->cashier = cashier1;
@@ -57,9 +48,7 @@ void Arrival::process() {
     Poisson::init();
     double random = Poisson::next(simulation->getAverageArrivalTime());
     double nextTime = ceil(simulation->getCurrentTime() + random);
-    //double nextTime = simulation->getCurrentTime() + random;
-    cout << "\trandom : " << random << endl;
-    cout << "\tnextTime : " << nextTime << endl;
+    cout << " ";
 
     if(nextTime <= simulation->getPlannedDuration()){
         simulation->addEvent(new Arrival(nextTime, *simulation));

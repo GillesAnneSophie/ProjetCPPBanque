@@ -4,9 +4,6 @@
 
 #include "Event.h"
 
-#include <iostream>
-using namespace std;
-
 Event::Event(double time) {
     this->time = time;
 }
