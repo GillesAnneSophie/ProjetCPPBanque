@@ -14,7 +14,7 @@ public:
      * Client Constructor
      * @param arrivalTime
      */
-    Client(double arrivalTime);
+    explicit Client(double arrivalTime);
     /**
      * Client Copy-Constructor
      * @param client

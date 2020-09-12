@@ -27,7 +27,7 @@ void Departure::process() {
         cout << "> Departure::process()" << endl;
     }
 
-    int occupiedTime = this->getTime()-client->getArrivalTime();
+    int occupiedTime = (int) (this->getTime()-client->getArrivalTime());
     cashier->addOccupiedTime(occupiedTime);
 
     delete client;

@@ -14,7 +14,7 @@ public:
      * Event Constructor
      * @param time
      */
-    Event(double time);
+    explicit Event(double time);
     /**
      * Event Copy-Constructor
      * @param event

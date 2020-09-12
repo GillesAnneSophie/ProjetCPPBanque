@@ -27,7 +27,7 @@ public:
      * Queue Constructor
      * @param bank
      */
-    Queue(Bank & bank);
+    explicit Queue(Bank & bank);
     /**
      * Queue Copy-Constructor
      * @param queue

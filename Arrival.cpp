@@ -33,7 +33,7 @@ void Arrival::process() {
         cout << "> Arrival::process()" << endl;
     }
 
-    Client * client1 = new Client(simulation->getCurrentTime());
+    auto * client1 = new Client(simulation->getCurrentTime());
     this->client = client1;
     simulation->getBank().addClientToCount();
     Cashier* cashier1 = simulation->getBank().getFirstAvailableCashier();

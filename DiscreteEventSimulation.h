@@ -24,7 +24,7 @@ public:
      * DiscreteEventSimulation Constructor
      * @param startTime
      */
-    DiscreteEventSimulation(double startTime);
+    explicit DiscreteEventSimulation(double startTime);
     /**
      * DiscreteEventSimulation Copy-Constructor
      * @param discreteEventSimulation
