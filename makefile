@@ -1,6 +1,9 @@
-main: main.o Bank.o Simulation.o Client.o Cashier.o Queue.o DiscreteEventSimulation.o Event.o Arrival.o Departure.o CompareEventPriority.o Poisson.o
+all : md main
 
-	g++ -o main objects/main.o objects/Bank.o objects/Simulation.o objects/Client.o objects/Cashier.o objects/Queue.o objects/DiscreteEventSimulation.o objects/Event.o objects/Arrival.o objects/Departure.o objects/CompareEventPriority.o objects/Poisson.o
+md: mkdir objects
+
+main: main.o Bank.o Simulation.o Client.o Cashier.o Queue.o DiscreteEventSimulation.o Event.o Arrival.o Departure.o CompareEventPriority.o Poisson.o
+	g++ objects/main.o objects/Bank.o objects/Simulation.o objects/Client.o objects/Cashier.o objects/Queue.o objects/DiscreteEventSimulation.o objects/Event.o objects/Arrival.o objects/Departure.o objects/CompareEventPriority.o objects/Poisson.o -o main
 
 main.o: main.cpp Simulation.h
 	g++ main.cpp -o objects/main.o
