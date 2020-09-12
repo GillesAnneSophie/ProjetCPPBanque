@@ -16,7 +16,7 @@ class Bank;
 
 class Queue{
 private:
-    deque<Client> clientQueue;
+    deque<Client *> clientQueue;
     int maxLength;
     double integral;
     Bank * bank;
@@ -62,7 +62,7 @@ public:
      * Remove first client from clientQueue and returns it
      * @return Client
      */
-    Client remove();
+    Client * remove();
 };
 
 #endif

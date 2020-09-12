@@ -72,8 +72,8 @@ void Cashier::free() {
     available = true;
 
     if(!bank->getQueue().isEmpty()){
-        Client newClient = bank->getQueue().remove();
-        this->serveClient(newClient);
+        Client * newClient = bank->getQueue().remove();
+        this->serveClient(*newClient);
     }
 }
 

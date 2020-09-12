@@ -34,9 +34,9 @@ void DiscreteEventSimulation::addEvent(Event * event) {
 
 void DiscreteEventSimulation::launch() {
 #ifdef _WIN32
-    Sleep(5000);
+    Sleep(3000);
 #else
-    sleep(5);
+    sleep(3);
 #endif
 
     while(!eventQueue.empty()) {
@@ -61,8 +61,8 @@ void DiscreteEventSimulation::launch() {
     }
 
 #ifdef _WIN32
-    Sleep(5000);
+    Sleep(3000);
 #else
-    sleep(5);
+    sleep(3);
 #endif
 }

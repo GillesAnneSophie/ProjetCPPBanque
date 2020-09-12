@@ -51,7 +51,7 @@ void Queue::addClient(Client & client) {
         cout << "> addClient()" << endl;
     }
 
-    clientQueue.push_back(client);
+    clientQueue.push_back(&client);
     int currentSize = clientQueue.size();
     if(currentSize > maxLength){
         maxLength = currentSize;
@@ -62,14 +62,14 @@ void Queue::addClient(Client & client) {
     }
 }
 
-Client Queue::remove() {
+Client * Queue::remove() {
     if(bank->getSimulation().DEBUG){
         cout << "- remove()" << endl;
     }
 
-    Client client = clientQueue.front();
+    Client * client = clientQueue.front();
 
-    double clientWaitingTime = bank->getSimulation().getCurrentTime()-client.getArrivalTime();
+    double clientWaitingTime = bank->getSimulation().getCurrentTime()-client->getArrivalTime();
     waitingTime += clientWaitingTime;
     integral += clientQueue.size()*(clientWaitingTime);
 
