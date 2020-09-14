@@ -1,4 +1,5 @@
 #Working Version
+#Les CFFLAGS sont en doublons, et même pas utilisés
 NAME = out
 SRC = *.cpp
 
