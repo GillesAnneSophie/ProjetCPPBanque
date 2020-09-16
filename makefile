@@ -7,18 +7,13 @@ MKDIR=mkdir -p
 
 all : $(EXEC)
 
-#md: mkdir $(OUTPUT_DIR)
-
-#${OUT_DIR}: ${OUT_DIR}
-#	${MKDIR} ${OUTPUT_DIR}
 ${OUTPUT_DIR}:
 	${MKDIR} $(OUTPUT_DIR)
 
 main: ${OUTPUT_DIR} main.o Bank.o Simulation.o Client.o Poisson.o DiscreteEventSimulation.o Event.o Arrival.o Departure.o Cashier.o Queue.o CompareEventPriority.o
 	$(CC) -o $@ $(OUTPUT_DIR)/*.o
-	#$(CC) -o $@ $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/Bank.o $(OUTPUT_DIR)/Simulation.o $(OUTPUT_DIR)/Client.o $(OUTPUT_DIR)/Cashier.o $(OUTPUT_DIR)/Queue.o $(OUTPUT_DIR)/DiscreteEventSimulation.o $(OUTPUT_DIR)/Event.o $(OUTPUT_DIR)/Arrival.o $(OUTPUT_DIR)/Departure.o $(OUTPUT_DIR)/CompareEventPriority.o $(OUTPUT_DIR)/Poisson.o
 
-Queue.o: Queue.cpp Queue.h Client.h Bank.h Poisson.h
+Queue.o: Queue.cpp Queue.h Client.h Bank.h
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ $(CFLAGS)
 
 Bank.o: Bank.cpp Bank.h Cashier.h Queue.h Simulation.h
@@ -30,7 +25,7 @@ Simulation.o: Simulation.cpp Simulation.h Bank.h DiscreteEventSimulation.h Arriv
 Client.o: Client.cpp Client.h
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ $(CFLAGS)
 
-Cashier.o: Cashier.cpp Poisson.h Departure.h Cashier.h Bank.h Client.h
+Cashier.o: Cashier.cpp Departure.h Cashier.h Bank.h Client.h
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ $(CFLAGS)
 
 DiscreteEventSimulation.o: DiscreteEventSimulation.cpp DiscreteEventSimulation.h Event.h CompareEventPriority.h
@@ -51,15 +46,11 @@ CompareEventPriority.o: CompareEventPriority.cpp CompareEventPriority.h Event.h
 Poisson.o: Poisson.cpp Poisson.h
 	$(CC) -c $< -o $(OUTPUT_DIR)/$@ $(CFLAGS)
 
-#${MKDIR} ${OUTPUT_DIR}
-#$(CC) main.cpp -o $(OUTPUT_DIR)/main.o
 main.o: main.cpp *.h 
 	$(CC) -o $(OUTPUT_DIR)/$@ -c $<
 
-#clean: rm -f main $(OUTPUT_DIR)/*.o
-
 clean:
-	rm -rf *.o
+	rm -rf $(OUTPUT_DIR) $(EXEC) 
 
 mrproper: clean
 	rm -rf $(EXEC)

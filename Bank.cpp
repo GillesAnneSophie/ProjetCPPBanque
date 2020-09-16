@@ -4,6 +4,8 @@
 
 #include "Bank.h"
 
+using namespace std;
+
 Bank::Bank(double averageServiceTime, int cashiersCount, Simulation & simulation) {
     if(simulation.DEBUG){
         cout << "> Bank()" << endl;
@@ -67,7 +69,8 @@ Cashier* Bank::getFirstAvailableCashier() {
         }
         i++;
     }
-    return nullptr;
+    //return nullptr;
+    return NULL;
 }
 
 Queue& Bank::getQueue() {
