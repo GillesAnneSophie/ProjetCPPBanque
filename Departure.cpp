@@ -4,7 +4,7 @@
 
 #include "Departure.h"
 
-Departure::Departure(double time, Client & client, Cashier & cashier, double serviceTime) : Event(time) {
+Departure::Departure(double time, Client & client, Cashier & cashier) : Event(time) {
     if(cashier.getBank().getSimulation().DEBUG){
         cout << "> Departure()" << endl;
     }
@@ -26,9 +26,8 @@ void Departure::process() {
     if(cashier->getBank().getSimulation().DEBUG){
         cout << "> Departure::process()" << endl;
     }
-
-    double occupiedTime = (double) this->serviceTime;
-    cashier->addOccupiedTime(occupiedTime);
+    
+    // cashier->addOccupiedTime(occupiedTime);
 
     delete client;
     cashier->free();

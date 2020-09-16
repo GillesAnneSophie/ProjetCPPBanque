@@ -24,7 +24,7 @@ public:
      * @param cashier
      * @param serviceTime
      */
-    Departure(double time, Client & client, Cashier & cashier, double serviceTime);
+    Departure(double time, Client & client, Cashier & cashier);
     /**
      * Departure Copy-Constructor
      * @param departure

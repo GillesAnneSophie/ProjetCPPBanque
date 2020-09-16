@@ -53,12 +53,12 @@ void Cashier::serveClient(Client & client) {
 
     Poisson::init(rand());
     double random = Poisson::next(averageServiceTime);
-    double nextTime = ceil(random);
-    if(nextTime < bank->getSimulation().getCurrentTime()){
-        nextTime += bank->getSimulation().getCurrentTime();
-    }
+    double currentOccupiedTime = ceil(random);
+    double nextTime = bank->getSimulation().getCurrentTime() + currentOccupiedTime;
 
-    bank->getSimulation().addEvent(new Departure(nextTime, client, *this, random));
+    occupiedTime += currentOccupiedTime;
+    
+    bank->getSimulation().addEvent(new Departure(nextTime, client, *this));
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;

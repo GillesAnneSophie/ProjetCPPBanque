@@ -24,14 +24,14 @@ private:
 public:
     /**
      * Bank Constructor
-     * @param averageServiceTime
-     * @param cashiersCount
-     * @param simulation
+     * @param averageServiceTime Average Service time for each client during the simulation
+     * @param cashiersCount Number of Cashiers-class objects during the simulation 
+     * @param simulation Simulation reference parameter to access simulation data from bank
      */
     Bank(double averageServiceTime, int cashiersCount, Simulation & simulation);
     /**
      * Bank Copy-Constructor
-     * @param bank
+     * @param bank Bank reference parameter
      */
     Bank(const Bank & bank);
     /**
@@ -40,7 +40,7 @@ public:
     ~Bank();
     /**
      * Get clients count
-     * @return clientsCount
+     * @return clientsCount Integer return value
      */
     int getClientsCount();
     /**
@@ -49,7 +49,7 @@ public:
     void addClientToCount();
     /**
      * Get the first (from 0 to cashiersCount) available cashier
-     * @return cashier|null
+     * @return A cashier object if available or null
      */
     Cashier* getFirstAvailableCashier();
     /**
