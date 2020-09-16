@@ -4,14 +4,14 @@
 
 #include "Departure.h"
 
-Departure::Departure(double time, Client & client, Cashier & cashier) : Event(time) {
+Departure::Departure(double time, Client & client, Cashier & cashier, double serviceTime) : Event(time) {
     if(cashier.getBank().getSimulation().DEBUG){
         cout << "> Departure()" << endl;
     }
 
     this->client = &client;
     this->cashier = &cashier;
-
+    this->serviceTime = serviceTime;
     if(cashier.getBank().getSimulation().DEBUG){
         cout << "< Departure()" << endl;
     }
@@ -27,7 +27,7 @@ void Departure::process() {
         cout << "> Departure::process()" << endl;
     }
 
-    int occupiedTime = (int) (this->getTime()-client->getArrivalTime());
+    double occupiedTime = (double) this->serviceTime;
     cashier->addOccupiedTime(occupiedTime);
 
     delete client;

@@ -14,15 +14,17 @@ class Departure : public Event{
 private:
     Client * client;
     Cashier * cashier;
-
+    double serviceTime;
+    
 public:
     /**
      * Departure Constructor
      * @param time
      * @param client
      * @param cashier
+     * @param serviceTime
      */
-    Departure(double time, Client & client, Cashier & cashier);
+    Departure(double time, Client & client, Cashier & cashier, double serviceTime);
     /**
      * Departure Copy-Constructor
      * @param departure

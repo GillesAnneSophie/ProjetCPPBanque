@@ -36,7 +36,7 @@ int Cashier::getClientsCount() {
 
 double Cashier::getOccupationRate() {
     double rd = bank->getSimulation().getRealDuration();
-    return (occupiedTime*100)/rd;
+    return (occupiedTime*100.00)/rd;
 }
 
 bool Cashier::isAvailable() {
@@ -58,7 +58,7 @@ void Cashier::serveClient(Client & client) {
         nextTime += bank->getSimulation().getCurrentTime();
     }
 
-    bank->getSimulation().addEvent(new Departure(nextTime, client, *this));
+    bank->getSimulation().addEvent(new Departure(nextTime, client, *this, random));
 
     if(bank->getSimulation().DEBUG){
         cout << "< serveClient()" << endl;
