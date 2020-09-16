@@ -69,8 +69,7 @@ Cashier* Bank::getFirstAvailableCashier() {
         }
         i++;
     }
-    //return nullptr;
-    return NULL;
+    return nullptr;
 }
 
 Queue& Bank::getQueue() {
