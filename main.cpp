@@ -11,7 +11,7 @@ int main() {
     int plannedDuration = 1000;
     int averageArrivalTime = 5;
     int averageServiceTime = 15;
-    int cashiersCount = 3; // 3 = > 100%
+    int cashiersCount = 3;
 
     cout << "----- Begin Simulation -----" << endl
          << "plannedDuration: " << plannedDuration << endl

@@ -11,7 +11,6 @@ Departure::Departure(double time, Client & client, Cashier & cashier) : Event(ti
 
     this->client = &client;
     this->cashier = &cashier;
-    this->serviceTime = serviceTime;
     if(cashier.getBank().getSimulation().DEBUG){
         cout << "< Departure()" << endl;
     }
@@ -26,8 +25,6 @@ void Departure::process() {
     if(cashier->getBank().getSimulation().DEBUG){
         cout << "> Departure::process()" << endl;
     }
-    
-    // cashier->addOccupiedTime(occupiedTime);
 
     delete client;
     cashier->free();

@@ -22,7 +22,6 @@ public:
      * @param time
      * @param client
      * @param cashier
-     * @param serviceTime
      */
     Departure(double time, Client & client, Cashier & cashier);
     /**
