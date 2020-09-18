@@ -24,11 +24,11 @@ private:
 public:
     /**
      * Bank Constructor
-     * @param averageServiceTime Average Service time for each client during the simulation
+     * @param averageServiceTimes Average Service times for each cashier during the simulation
      * @param cashiersCount Number of Cashiers-class objects during the simulation 
      * @param simulation Simulation reference parameter to access simulation data from bank
      */
-    Bank(double averageServiceTime, int cashiersCount, Simulation & simulation);
+    Bank(double * averageServiceTimes, int cashiersCount, Simulation & simulation);
     /**
      * Bank Copy-Constructor
      * @param bank Bank reference parameter

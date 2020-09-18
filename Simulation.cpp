@@ -7,12 +7,12 @@
 #include <iostream>
 using namespace std;
 
-Simulation::Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount) : DiscreteEventSimulation(0) {
+Simulation::Simulation(double plannedDuration, double averageArrivalTime, double * averageServiceTimes, int cashiersCount) : DiscreteEventSimulation(0) {
     if(DEBUG){
         cout << "> Simulation()" << endl;
     }
 
-    bank = new Bank(averageServiceTime, cashiersCount, *this);
+    bank = new Bank(averageServiceTimes, cashiersCount, *this);
     this->plannedDuration = plannedDuration;
     this->averageArrivalTime = averageArrivalTime;
     this->realDuration = plannedDuration;

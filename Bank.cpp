@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Bank::Bank(double averageServiceTime, int cashiersCount, Simulation & simulation) {
+Bank::Bank(double * averageServiceTimes, int cashiersCount, Simulation & simulation) {
     if(simulation.DEBUG){
         cout << "> Bank()" << endl;
     }
@@ -17,7 +17,7 @@ Bank::Bank(double averageServiceTime, int cashiersCount, Simulation & simulation
     queue = new Queue(*this);
     cashiers = new Cashier*[cashiersCount];
     for(int i=0 ; i<cashiersCount ; i++){
-        cashiers[i] = new Cashier(averageServiceTime, *this);
+        cashiers[i] = new Cashier(averageServiceTimes[i], *this);
     }
 
     if(simulation.DEBUG){

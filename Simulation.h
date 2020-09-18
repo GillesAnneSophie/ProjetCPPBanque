@@ -23,10 +23,10 @@ public:
      * Simulation Constructor
      * @param plannedDuration
      * @param averageArrivalTime
-     * @param averageServiceTime
+     * @param averageServiceTimes
      * @param cashiersCount
      */
-    Simulation(int plannedDuration, double averageArrivalTime, double averageServiceTime, int cashiersCount);
+    Simulation(double plannedDuration, double averageArrivalTime, double * averageServiceTimes, int cashiersCount);
     /**
      * Simulation Copy-Constructor
      * @param simulation

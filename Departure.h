@@ -14,7 +14,6 @@ class Departure : public Event{
 private:
     Client * client;
     Cashier * cashier;
-    double serviceTime;
     
 public:
     /**
