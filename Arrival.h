@@ -1,5 +1,6 @@
 /*
  * @author Anne-Sophie GILLES
+ * @author Amaury SIHARATH
  */
 
 #ifndef PROJECT_ARRIVAL_H

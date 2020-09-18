@@ -1,5 +1,6 @@
 /*
  * @author Anne-Sophie GILLES
+ * @author Amaury SIHARATH
  */
 
 #include "Arrival.h"

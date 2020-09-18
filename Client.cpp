@@ -1,5 +1,5 @@
 /*
- * @author Anne-Sophie GILLES
+ * @author Amaury SIHARATH
  */
 
 #include "Client.h"
