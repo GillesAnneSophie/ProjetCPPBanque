@@ -15,6 +15,12 @@
 class Simulation;
 class Cashier;
 
+/**
+ *  Arrival class, inheriting from Event class. Representing the arrival of a client in the bank. Given private attributes are :
+ * - cashier : A Cashier-pointer attribute, indicating the cashier related to an Arrival event.
+ * - client : A Client-pointer attribute, indicating the client that just arrived in the bank.
+ * - simulation : A Simulation-pointer attribute, for easy access
+ */
 class Arrival : public Event{
 private:
     Cashier * cashier;
@@ -24,8 +30,8 @@ private:
 public:
     /**
      * Arrival Constructor
-     * @param time Double parameter representing the Arrival time (of a client)
-     * @param simulation Simulation-class reference parameter to keep track of the current Simulation object
+     * @param time Double parameter representing the Arrival time (of a Client)
+     * @param simulation Simulation reference parameter to keep track of the current Simulation object
      */
     Arrival(double time, Simulation & simulation);
     /**
@@ -34,7 +40,7 @@ public:
      */
     Arrival(const Arrival & arrival);
     /**
-     * Launch Arrival's process. A new client is created. If a Cashier is available, the newly created client is attributed. Else, the client goes in the queue. A new Arrival Event is created during the process.
+     * Launch Arrival's process. A new client is created. If a or several Cashier are available, the newly created client is attributed to the first available Cashier. Else, the client goes in the Queue. A new Arrival Event is created during the process.
      */
     void process() override;
 };

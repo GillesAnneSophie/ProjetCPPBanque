@@ -21,10 +21,10 @@ private:
 public:
     /**
      * Simulation Constructor
-     * @param plannedDuration
-     * @param averageArrivalTime
-     * @param averageServiceTimes
-     * @param cashiersCount
+     * @param plannedDuration Planned Duration for the simulation
+     * @param averageArrivalTime Average arrival time wanted for the simulation
+     * @param averageServiceTimes Average service time wanted for the cashier
+     * @param cashiersCount Wanted number of cashiers for the bank
      */
     Simulation(double plannedDuration, double averageArrivalTime, double * averageServiceTimes, int cashiersCount);
     /**
@@ -33,17 +33,17 @@ public:
      */
     Simulation(const Simulation & simulation);
     /**
-     * Get simulation's planned duration
-     * @return plannedDuration
+     * Get simulation's planned duration.
+     * @return plannedDuration as a double value
      */
     double getPlannedDuration();
     /**
-     * Get average arrival time
-     * @return averageArrivalTime
+     * Get average arrival time.
+     * @return averageArrivalTime as a double value
      */
     double getAverageArrivalTime();
     /**
-     * Get bank
+     * Get bank.
      * @return bank
      */
     Bank & getBank();

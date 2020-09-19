@@ -5,6 +5,10 @@
 #ifndef PROJECT_EVENT_H
 #define PROJECT_EVENT_H
 
+/**
+ * Event class, working as a virtual class. Given attribute is :
+ * - time : double attribute indicating the time when the event took place
+ */
 class Event{
 private:
     double time;
@@ -26,7 +30,7 @@ public:
     virtual void process() = 0;
     /**
      * Get time
-     * @return time
+     * @return time as a double value.
      */
     double getTime();
 };

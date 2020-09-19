@@ -14,6 +14,14 @@ using namespace std;
 
 class Bank;
 
+/**
+ * Queue class representing the queue of customers in the bank. Given private attributes are :
+ * - clientQueue : deque<Client *> attribute, which is behaving as a FIFO (First In First out).
+ * - maxLength : integer attribute, where the maximum length of the queue reached during the simulation is saved. 
+ * - integral : double attribute where the result of the calculated integral is kept, used when calculating queue average length.
+ * - bank : Bank-Pointer attribute, for easy access to the bank instance.
+ * - waitingTime : double attribute, used when calculating average serving time.
+*/
 class Queue{
 private:
     deque<Client *> clientQueue;
@@ -25,7 +33,7 @@ private:
 public:
     /**
      * Queue Constructor
-     * @param bank
+     * @param bank Reference in which the queue is part of
      */
     explicit Queue(Bank & bank);
     /**
@@ -34,28 +42,30 @@ public:
      */
     Queue(const Queue & queue);
     /**
-     * Get max length
-     * @return maxLength
+     * Get max length of the queue reached during the simulation.
+     * @return maxLength as an integer value
      */
     int getMaxLength();
     /**
-     * Get average length
-     * @return averageLength
+     * Get average length of the queue during the simulation.
+     * @return averageLength as a double value
      */
     double getAverageLength();
     /**
-     * Get average waiting time
-     * @return averageWaitingTime
+     * Get average waiting time during the simulation.
+     * @return averageWaitingTime as a double value.
      */
     double getAverageWaitingTime();
     /**
      * Add client to clientQueue
-     * @param client
+     * @param client to be added in the queue.
      */
     void addClient(Client & client);
     /**
-     * Get is clientQueue empty
-     * @return true|false
+     * Get if clientQueue is empty
+     * @return 
+     * - true if clientQueue is empty
+     * - Else return false
      */
     bool isEmpty();
     /**
