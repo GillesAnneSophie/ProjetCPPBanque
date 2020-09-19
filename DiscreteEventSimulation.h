@@ -15,10 +15,10 @@
 using namespace std; 
 
 /**
- * DiscreteEventSimulation class, obviously representing it's purpose. Three given private attributes are :
- * - currentTime : double attribute which is keeping the current time of the Simulation. It is everchanging when simulation is running.
- * - startTime : double attribute indicating the start time of the Simulation. 
- * - eventQueue ! priority_queue<Event*, vector<Event*>, CompareEventPriority> attribute. Events being or going to be processed are kept there.
+ * DiscreteEventSimulation class. Given private attributes are :
+ * - currentTime Double - the current time of the simulation
+ * - startTime Double - the start time of the simulation
+ * - eventQueue priority_queue<Event*, vector<Event*>, CompareEventPriority> - Queue of all simulation's events to be processed
  */
 class DiscreteEventSimulation{
 private:
@@ -28,27 +28,27 @@ private:
 
 public:
     /**
-     * DiscreteEventSimulation Constructor.
-     * @param startTime Start time of the simulation
+     * DiscreteEventSimulation Constructor
+     * @param startTime Double - start time of the simulation
      */
     explicit DiscreteEventSimulation(double startTime);
     /**
-     * DiscreteEventSimulation Copy-Constructor.
-     * @param discreteEventSimulation
+     * DiscreteEventSimulation Copy-Constructor
+     * @param discreteEventSimulation DiscreteEventSimulation
      */
     DiscreteEventSimulation(const DiscreteEventSimulation & discreteEventSimulation);
     /**
-     * Add the given event to eventQueue.
-     * @param event Event to be added. Can be a Departure or Arrival, or any class implementing Event.
+     * Add the given event to eventQueue
+     * @param event Event
      */
     void addEvent(Event * event);
     /**
-     * Get current time.
-     * @return currentTime as a double value
+     * Get current time
+     * @return currentTime Double
      */
     double getCurrentTime();
     /**
-     * Launch simulation.
+     * Launch simulation
      */
     void launch();
 };

@@ -11,6 +11,13 @@
 
 class Bank;
 
+/**
+ * Simulation class. Given private attributes are :
+ * - plannedDuration Double - planned duration for the simulation
+ * - realDuration Double - real duration at the end of the simulation
+ * - averageArrivalTime Double - average arrival time wanted for the simulation
+ * - bank bank - an access to the Bank object
+ */
 class Simulation : public DiscreteEventSimulation{
 private:
     double plannedDuration;
@@ -21,40 +28,40 @@ private:
 public:
     /**
      * Simulation Constructor
-     * @param plannedDuration Planned Duration for the simulation
-     * @param averageArrivalTime Average arrival time wanted for the simulation
-     * @param averageServiceTimes Average service time wanted for the cashier
-     * @param cashiersCount Wanted number of cashiers for the bank
+     * @param plannedDuration Double - planned duration for the simulation
+     * @param averageArrivalTime Double - average arrival time wanted for the simulation
+     * @param averageServiceTimes Double[] - average service times wanted for the cashiers
+     * @param cashiersCount Int - wanted number of cashiers for the bank
      */
     Simulation(double plannedDuration, double averageArrivalTime, double * averageServiceTimes, int cashiersCount);
     /**
      * Simulation Copy-Constructor
-     * @param simulation
+     * @param simulation Simulation
      */
     Simulation(const Simulation & simulation);
     /**
-     * Get simulation's planned duration.
-     * @return plannedDuration as a double value
+     * Get simulation's planned duration
+     * @return plannedDuration Double
      */
     double getPlannedDuration();
     /**
-     * Get average arrival time.
-     * @return averageArrivalTime as a double value
+     * Get average arrival time
+     * @return averageArrivalTime Double
      */
     double getAverageArrivalTime();
     /**
-     * Get bank.
-     * @return bank
+     * Get bank
+     * @return Bank
      */
     Bank & getBank();
     /**
      * Set simulation's real duration
-     * @param realDuration
+     * @param realDuration Double
      */
     void setRealDuration(double realDuration);
     /**
      * Get simulation's real duration
-     * @return realDuration
+     * @return realDuration Double
      */
     double getRealDuration();
 

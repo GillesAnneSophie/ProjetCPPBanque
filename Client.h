@@ -6,8 +6,8 @@
 #define PROJECT_CLIENT_H
 
 /**
- * Class representing a client. A client is essentially caracterized by :
- * - arrivalTime : double attribute that is given when a client is created, representing it's time of arrival. 
+ * Client class. Given private attribute is :
+ * - arrivalTime Double - the client's time of arrival
  */
 
 class Client{
@@ -16,18 +16,18 @@ private:
 
 public:
     /**
-     * Client Constructor.
-     * @param arrivalTime The client's time of arrival in the bank.
+     * Client Constructor
+     * @param arrivalTime Double - the client's time of arrival in the bank
      */
     explicit Client(double arrivalTime);
     /**
-     * Client Copy-Constructor.
-     * @param client
+     * Client Copy-Constructor
+     * @param client Client
      */
     Client(const Client & client);
     /**
      * Get arrival time
-     * @return arrivalTime attribute as a double value. 
+     * @return arrivalTime Double
      */
     double getArrivalTime();
 };

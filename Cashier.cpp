@@ -82,10 +82,6 @@ Bank& Cashier::getBank() {
     return *bank;
 }
 
-void Cashier::addOccupiedTime(double time) {
-    occupiedTime += time;
-}
-
 double Cashier::getOccupiedTime() {
     return occupiedTime;
 }

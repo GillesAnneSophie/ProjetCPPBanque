@@ -15,12 +15,12 @@ using namespace std;
 class Bank;
 
 /**
- * Queue class representing the queue of customers in the bank. Given private attributes are :
- * - clientQueue : deque<Client *> attribute, which is behaving as a FIFO (First In First out).
- * - maxLength : integer attribute, where the maximum length of the queue reached during the simulation is saved. 
- * - integral : double attribute where the result of the calculated integral is kept, used when calculating queue average length.
- * - bank : Bank-Pointer attribute, for easy access to the bank instance.
- * - waitingTime : double attribute, used when calculating average serving time.
+ * Queue class. Given private attributes are :
+ * - clientQueue deque<Client *> - basically a FIFO (First In First out) queue
+ * - maxLength Int - the maximum length of the queue reached during the simulation
+ * - integral Double - the result of the calculated integral for the average length
+ * - bank Bank - an access to the Bank object
+ * - waitingTime Double - the average waiting time in the queue
 */
 class Queue{
 private:
@@ -33,43 +33,41 @@ private:
 public:
     /**
      * Queue Constructor
-     * @param bank Reference in which the queue is part of
+     * @param bank Bank - reference parameter to access simulation data from bank
      */
     explicit Queue(Bank & bank);
     /**
      * Queue Copy-Constructor
-     * @param queue
+     * @param queue Queue
      */
     Queue(const Queue & queue);
     /**
-     * Get max length of the queue reached during the simulation.
-     * @return maxLength as an integer value
+     * Get max length of the queue reached during the simulation
+     * @return maxLength Int
      */
     int getMaxLength();
     /**
-     * Get average length of the queue during the simulation.
-     * @return averageLength as a double value
+     * Get average length of the queue
+     * @return averageLength Double
      */
     double getAverageLength();
     /**
-     * Get average waiting time during the simulation.
-     * @return averageWaitingTime as a double value.
+     * Get average waiting time in the queue
+     * @return averageWaitingTime Double
      */
     double getAverageWaitingTime();
     /**
      * Add client to clientQueue
-     * @param client to be added in the queue.
+     * @param client Client
      */
     void addClient(Client & client);
     /**
-     * Get if clientQueue is empty
-     * @return 
-     * - true if clientQueue is empty
-     * - Else return false
+     * Get clientQueue emptiness
+     * @return Boolean - according to queue emptiness
      */
     bool isEmpty();
     /**
-     * Remove first client from clientQueue and returns it
+     * Remove first client from clientQueue and return it
      * @return Client
      */
     Client * remove();

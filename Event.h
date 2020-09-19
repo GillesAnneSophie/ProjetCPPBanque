@@ -16,12 +16,12 @@ private:
 public:
     /**
      * Event Constructor
-     * @param time
+     * @param time Double - the arrival or departure time of the client
      */
     explicit Event(double time);
     /**
      * Event Copy-Constructor
-     * @param event
+     * @param event Event
      */
     Event(const Event & event);
     /**
@@ -30,7 +30,7 @@ public:
     virtual void process() = 0;
     /**
      * Get time
-     * @return time as a double value.
+     * @return time Double
      */
     double getTime();
 };

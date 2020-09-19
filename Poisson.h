@@ -5,13 +5,13 @@ class Poisson {
 public:
     /**
      * Initialise Poisson's Law
-     * @param seed
+     * @param seed Int
      */
     static void init(int seed = 0);
     /**
      * Get a random following Poisson's Law
-     * @param moy
-     * @return random
+     * @param moy Double
+     * @return random Double
      */
     static double next(double moy = 1.0);
 };

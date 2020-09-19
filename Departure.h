@@ -11,9 +11,9 @@
 class Cashier;
 
 /**
- * Departure class, inheriting from Event class. Representing the departure of a client from the bank. Given private attributes are :
- *- cashier : A Cashier-pointer attribute, indicating the cashier that finished serving the client.
- *- client : A Client-pointer attribute, indicating the client that is going to depart from the bank.
+ * Departure class, inheriting from Event class. Given private attributes are :
+ * - cashier Cashier - the cashier related to the Departure event
+ * - client Client - the client who has just arrived in the bank
  */
 class Departure : public Event{
 private:
@@ -22,19 +22,19 @@ private:
     
 public:
     /**
-     * Departure Constructor.
-     * @param time Departure time
-     * @param client Departing client
-     * @param cashier Cashier that served the client and which is going to be available
+     * Departure Constructor
+     * @param time Double - the arrival time of the client
+     * @param client Client - the client who is leaving the bank
+     * @param cashier Cashier - the cashier who served the client
      */
     Departure(double time, Client & client, Cashier & cashier);
     /**
-     * Departure Copy-Constructor.
-     * @param departure
+     * Departure Copy-Constructor
+     * @param departure Departure
      */
     Departure(const Departure & departure);
     /**
-     * Launch Departure's process. The cashier associated with the departure is going to be enabled, while the client while by destroyed.
+     * Launch Departure's process. The cashier associated with the departure is going to be available, while the client will be destroyed.
      */
     void process() override;
 };
