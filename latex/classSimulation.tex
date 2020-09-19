@@ -1,0 +1,120 @@
+\hypertarget{classSimulation}{}\section{Simulation Class Reference}
+\label{classSimulation}\index{Simulation@{Simulation}}
+
+
+Inheritance diagram for Simulation\+:
+% FIG 0
+
+
+Collaboration diagram for Simulation\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSimulation_a4709539e1e5ef724442ba1484d4a9ab8}{Simulation} (double planned\+Duration, double average\+Arrival\+Time, double $\ast$average\+Service\+Times, int cashiers\+Count)
+\item 
+\hyperlink{classSimulation_ad82aba6067f881a5c364ea6b6b317325}{Simulation} (const \hyperlink{classSimulation}{Simulation} \&simulation)
+\item 
+double \hyperlink{classSimulation_a242c58ccefca3705bdc47ee7827c24fe}{get\+Planned\+Duration} ()
+\item 
+double \hyperlink{classSimulation_a1e4f97c6011a0cbce91c5034c917ab46}{get\+Average\+Arrival\+Time} ()
+\item 
+\hyperlink{classBank}{Bank} \& \hyperlink{classSimulation_a280ef124f9f6395a446b36a9dd45e4bc}{get\+Bank} ()
+\item 
+void \hyperlink{classSimulation_af7d8147539e8ea62f83c44fa0431e27d}{set\+Real\+Duration} (double real\+Duration)
+\item 
+double \hyperlink{classSimulation_a18218154310af27c087def0936690346}{get\+Real\+Duration} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSimulation_ae125e30e669048458632583d63c6683e}\label{classSimulation_ae125e30e669048458632583d63c6683e}} 
+bool {\bfseries D\+E\+B\+UG} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSimulation_a4709539e1e5ef724442ba1484d4a9ab8}\label{classSimulation_a4709539e1e5ef724442ba1484d4a9ab8}} 
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{Simulation()}{Simulation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Simulation\+::\+Simulation (\begin{DoxyParamCaption}\item[{double}]{planned\+Duration,  }\item[{double}]{average\+Arrival\+Time,  }\item[{double $\ast$}]{average\+Service\+Times,  }\item[{int}]{cashiers\+Count }\end{DoxyParamCaption})}
+
+\hyperlink{classSimulation}{Simulation} Constructor 
+\begin{DoxyParams}{Parameters}
+{\em planned\+Duration} & Planned Duration for the simulation \\
+\hline
+{\em average\+Arrival\+Time} & Average arrival time wanted for the simulation \\
+\hline
+{\em average\+Service\+Times} & Average service time wanted for the cashier \\
+\hline
+{\em cashiers\+Count} & Wanted number of cashiers for the bank \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSimulation_ad82aba6067f881a5c364ea6b6b317325}\label{classSimulation_ad82aba6067f881a5c364ea6b6b317325}} 
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{Simulation()}{Simulation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Simulation\+::\+Simulation (\begin{DoxyParamCaption}\item[{const \hyperlink{classSimulation}{Simulation} \&}]{simulation }\end{DoxyParamCaption})}
+
+\hyperlink{classSimulation}{Simulation} Copy-\/\+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em simulation} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSimulation_a1e4f97c6011a0cbce91c5034c917ab46}\label{classSimulation_a1e4f97c6011a0cbce91c5034c917ab46}} 
+\index{Simulation@{Simulation}!get\+Average\+Arrival\+Time@{get\+Average\+Arrival\+Time}}
+\index{get\+Average\+Arrival\+Time@{get\+Average\+Arrival\+Time}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{get\+Average\+Arrival\+Time()}{getAverageArrivalTime()}}
+{\footnotesize\ttfamily double Simulation\+::get\+Average\+Arrival\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get average arrival time. \begin{DoxyReturn}{Returns}
+average\+Arrival\+Time as a double value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSimulation_a280ef124f9f6395a446b36a9dd45e4bc}\label{classSimulation_a280ef124f9f6395a446b36a9dd45e4bc}} 
+\index{Simulation@{Simulation}!get\+Bank@{get\+Bank}}
+\index{get\+Bank@{get\+Bank}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{get\+Bank()}{getBank()}}
+{\footnotesize\ttfamily \hyperlink{classBank}{Bank} \& Simulation\+::get\+Bank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get bank. \begin{DoxyReturn}{Returns}
+bank 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSimulation_a242c58ccefca3705bdc47ee7827c24fe}\label{classSimulation_a242c58ccefca3705bdc47ee7827c24fe}} 
+\index{Simulation@{Simulation}!get\+Planned\+Duration@{get\+Planned\+Duration}}
+\index{get\+Planned\+Duration@{get\+Planned\+Duration}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{get\+Planned\+Duration()}{getPlannedDuration()}}
+{\footnotesize\ttfamily double Simulation\+::get\+Planned\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get simulation\textquotesingle{}s planned duration. \begin{DoxyReturn}{Returns}
+planned\+Duration as a double value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSimulation_a18218154310af27c087def0936690346}\label{classSimulation_a18218154310af27c087def0936690346}} 
+\index{Simulation@{Simulation}!get\+Real\+Duration@{get\+Real\+Duration}}
+\index{get\+Real\+Duration@{get\+Real\+Duration}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{get\+Real\+Duration()}{getRealDuration()}}
+{\footnotesize\ttfamily double Simulation\+::get\+Real\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get simulation\textquotesingle{}s real duration \begin{DoxyReturn}{Returns}
+real\+Duration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSimulation_af7d8147539e8ea62f83c44fa0431e27d}\label{classSimulation_af7d8147539e8ea62f83c44fa0431e27d}} 
+\index{Simulation@{Simulation}!set\+Real\+Duration@{set\+Real\+Duration}}
+\index{set\+Real\+Duration@{set\+Real\+Duration}!Simulation@{Simulation}}
+\subsubsection{\texorpdfstring{set\+Real\+Duration()}{setRealDuration()}}
+{\footnotesize\ttfamily void Simulation\+::set\+Real\+Duration (\begin{DoxyParamCaption}\item[{double}]{real\+Duration }\end{DoxyParamCaption})}
+
+Set simulation\textquotesingle{}s real duration 
+\begin{DoxyParams}{Parameters}
+{\em real\+Duration} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Simulation.\+h\item 
+Simulation.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classBank}{}\section{Bank Class Reference}
+\label{classBank}\index{Bank@{Bank}}
+
+
+{\ttfamily \#include $<$Bank.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBank_a50332ff64fd0c79823a9f3c7e7e4c18b}{Bank} (double $\ast$average\+Service\+Times, int cashiers\+Count, \hyperlink{classSimulation}{Simulation} \&simulation)
+\item 
+\hyperlink{classBank_affa9032a547e660fa64b773fee47f612}{Bank} (const \hyperlink{classBank}{Bank} \&bank)
+\item 
+\hyperlink{classBank_a86eb33b90cf9dbf0a528155c5bfde004}{$\sim$\+Bank} ()
+\item 
+int \hyperlink{classBank_a46e579a690e0d3ca175923fcbae30a2d}{get\+Clients\+Count} ()
+\item 
+void \hyperlink{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}{add\+Client\+To\+Count} ()
+\item 
+\hyperlink{classCashier}{Cashier} $\ast$ \hyperlink{classBank_a406e1fc9b050ed4559760c5a52fe81e4}{get\+First\+Available\+Cashier} ()
+\item 
+\hyperlink{classQueue}{Queue} \& \hyperlink{classBank_a79644f520ee9fafdfa1ffa303b84bb4a}{get\+Queue} ()
+\item 
+\hyperlink{classSimulation}{Simulation} \& \hyperlink{classBank_a8d181c1cfdea6b987602f9e2954cb7ad}{get\+Simulation} ()
+\item 
+\hyperlink{classCashier}{Cashier} \& \hyperlink{classBank_a7eb0b71ef408a8e9798eb1d28e1733ea}{get\+Cashier} (int index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBank}{Bank} class. Some private attributes are given to represent a real life bank such as \+:
+\begin{DoxyItemize}
+\item The number of cashiers
+\item The total number of clients that came in the bank
+\item An array of cashiers existing in the bank
+\item A queue for the customers / clients
+\item An access to the \hyperlink{classSimulation}{Simulation} object 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBank_a50332ff64fd0c79823a9f3c7e7e4c18b}\label{classBank_a50332ff64fd0c79823a9f3c7e7e4c18b}} 
+\index{Bank@{Bank}!Bank@{Bank}}
+\index{Bank@{Bank}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{Bank()}{Bank()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bank\+::\+Bank (\begin{DoxyParamCaption}\item[{double $\ast$}]{average\+Service\+Times,  }\item[{int}]{cashiers\+Count,  }\item[{\hyperlink{classSimulation}{Simulation} \&}]{simulation }\end{DoxyParamCaption})}
+
+\hyperlink{classBank}{Bank} Constructor 
+\begin{DoxyParams}{Parameters}
+{\em average\+Service\+Times} & Average Service times for each cashier during the \hyperlink{classSimulation}{Simulation} \\
+\hline
+{\em cashiers\+Count} & Number of \hyperlink{classCashier}{Cashier} class objects during the simulation \\
+\hline
+{\em simulation} & \hyperlink{classSimulation}{Simulation} reference parameter to access simulation data from bank \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBank_affa9032a547e660fa64b773fee47f612}\label{classBank_affa9032a547e660fa64b773fee47f612}} 
+\index{Bank@{Bank}!Bank@{Bank}}
+\index{Bank@{Bank}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{Bank()}{Bank()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bank\+::\+Bank (\begin{DoxyParamCaption}\item[{const \hyperlink{classBank}{Bank} \&}]{bank }\end{DoxyParamCaption})}
+
+\hyperlink{classBank}{Bank} Copy-\/\+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em bank} & \hyperlink{classBank}{Bank} reference parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBank_a86eb33b90cf9dbf0a528155c5bfde004}\label{classBank_a86eb33b90cf9dbf0a528155c5bfde004}} 
+\index{Bank@{Bank}!````~Bank@{$\sim$\+Bank}}
+\index{````~Bank@{$\sim$\+Bank}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{$\sim$\+Bank()}{~Bank()}}
+{\footnotesize\ttfamily Bank\+::$\sim$\+Bank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hyperlink{classBank}{Bank} Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}\label{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}} 
+\index{Bank@{Bank}!add\+Client\+To\+Count@{add\+Client\+To\+Count}}
+\index{add\+Client\+To\+Count@{add\+Client\+To\+Count}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{add\+Client\+To\+Count()}{addClientToCount()}}
+{\footnotesize\ttfamily void Bank\+::add\+Client\+To\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Add a client to the clients\+Count attribute by increment \mbox{\Hypertarget{classBank_a7eb0b71ef408a8e9798eb1d28e1733ea}\label{classBank_a7eb0b71ef408a8e9798eb1d28e1733ea}} 
+\index{Bank@{Bank}!get\+Cashier@{get\+Cashier}}
+\index{get\+Cashier@{get\+Cashier}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{get\+Cashier()}{getCashier()}}
+{\footnotesize\ttfamily \hyperlink{classCashier}{Cashier} \& Bank\+::get\+Cashier (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+Get the cashier at given index in cashiers attribute 
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cashier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a46e579a690e0d3ca175923fcbae30a2d}\label{classBank_a46e579a690e0d3ca175923fcbae30a2d}} 
+\index{Bank@{Bank}!get\+Clients\+Count@{get\+Clients\+Count}}
+\index{get\+Clients\+Count@{get\+Clients\+Count}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{get\+Clients\+Count()}{getClientsCount()}}
+{\footnotesize\ttfamily int Bank\+::get\+Clients\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get clients count \begin{DoxyReturn}{Returns}
+clients\+Count as an Integer return value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a406e1fc9b050ed4559760c5a52fe81e4}\label{classBank_a406e1fc9b050ed4559760c5a52fe81e4}} 
+\index{Bank@{Bank}!get\+First\+Available\+Cashier@{get\+First\+Available\+Cashier}}
+\index{get\+First\+Available\+Cashier@{get\+First\+Available\+Cashier}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{get\+First\+Available\+Cashier()}{getFirstAvailableCashier()}}
+{\footnotesize\ttfamily \hyperlink{classCashier}{Cashier} $\ast$ Bank\+::get\+First\+Available\+Cashier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the first (from 0 to cashiers\+Count) available cashier \begin{DoxyReturn}{Returns}
+A cashier object if available or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a79644f520ee9fafdfa1ffa303b84bb4a}\label{classBank_a79644f520ee9fafdfa1ffa303b84bb4a}} 
+\index{Bank@{Bank}!get\+Queue@{get\+Queue}}
+\index{get\+Queue@{get\+Queue}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{get\+Queue()}{getQueue()}}
+{\footnotesize\ttfamily \hyperlink{classQueue}{Queue} \& Bank\+::get\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get \hyperlink{classQueue}{Queue} attribute \begin{DoxyReturn}{Returns}
+queue as a reference \hyperlink{classQueue}{Queue} return value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBank_a8d181c1cfdea6b987602f9e2954cb7ad}\label{classBank_a8d181c1cfdea6b987602f9e2954cb7ad}} 
+\index{Bank@{Bank}!get\+Simulation@{get\+Simulation}}
+\index{get\+Simulation@{get\+Simulation}!Bank@{Bank}}
+\subsubsection{\texorpdfstring{get\+Simulation()}{getSimulation()}}
+{\footnotesize\ttfamily \hyperlink{classSimulation}{Simulation} \& Bank\+::get\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get \hyperlink{classSimulation}{Simulation} attribute \begin{DoxyReturn}{Returns}
+simulation as a reference \hyperlink{classSimulation}{Simulation} return value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Bank.\+h\item 
+Bank.\+cpp\end{DoxyCompactItemize}
