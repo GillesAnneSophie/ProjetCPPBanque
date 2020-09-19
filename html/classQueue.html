@@ -88,12 +88,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2767e32f2c7f51eedf0b75af9d944f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classQueue.html">Queue</a> class representing the queue of customers in the bank. Given private attributes are :</p><ul>
-<li>clientQueue : deque&lt;Client *&gt; attribute, which is behaving as a FIFO (First In First out).</li>
-<li>maxLength : integer attribute, where the maximum length of the queue reached during the simulation is saved.</li>
-<li>integral : double attribute where the result of the calculated integral is kept, used when calculating queue average length.</li>
-<li>bank : Bank-Pointer attribute, for easy access to the bank instance.</li>
-<li>waitingTime : double attribute, used when calculating average serving time. </li>
+<div class="textblock"><p><a class="el" href="classQueue.html">Queue</a> class. Given private attributes are :</p><ul>
+<li>clientQueue deque&lt;Client *&gt; - basically a FIFO (First In First out) queue</li>
+<li>maxLength Int - the maximum length of the queue reached during the simulation</li>
+<li>integral Double - the result of the calculated integral for the average length</li>
+<li>bank <a class="el" href="classBank.html">Bank</a> - an access to the <a class="el" href="classBank.html">Bank</a> object</li>
+<li>waitingTime Double - the average waiting time in the queue </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae2647f6001471e160dc95362aba43313"></a>
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classQueue.html">Queue</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bank</td><td>Reference in which the queue is part of </td></tr>
+    <tr><td class="paramname">bank</td><td><a class="el" href="classBank.html">Bank</a> - reference parameter to access simulation data from bank </td></tr>
   </table>
   </dd>
 </dl>
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classQueue.html">Queue</a> Copy-Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">queue</td><td></td></tr>
+    <tr><td class="paramname">queue</td><td><a class="el" href="classQueue.html">Queue</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Add client to clientQueue </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>to be added in the queue. </td></tr>
+    <tr><td class="paramname">client</td><td><a class="el" href="classClient.html">Client</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -191,7 +191,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get average length of the queue during the simulation. </p><dl class="section return"><dt>Returns</dt><dd>averageLength as a double value </dd></dl>
+<p>Get average length of the queue </p><dl class="section return"><dt>Returns</dt><dd>averageLength Double </dd></dl>
 
 </div>
 </div>
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get average waiting time during the simulation. </p><dl class="section return"><dt>Returns</dt><dd>averageWaitingTime as a double value. </dd></dl>
+<p>Get average waiting time in the queue </p><dl class="section return"><dt>Returns</dt><dd>averageWaitingTime Double </dd></dl>
 
 </div>
 </div>
@@ -227,7 +227,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get max length of the queue reached during the simulation. </p><dl class="section return"><dt>Returns</dt><dd>maxLength as an integer value </dd></dl>
+<p>Get max length of the queue reached during the simulation </p><dl class="section return"><dt>Returns</dt><dd>maxLength Int </dd></dl>
 
 </div>
 </div>
@@ -245,11 +245,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get if clientQueue is empty </p><dl class="section return"><dt>Returns</dt><dd><ul>
-<li>true if clientQueue is empty</li>
-<li>Else return false </li>
-</ul>
-</dd></dl>
+<p>Get clientQueue emptiness </p><dl class="section return"><dt>Returns</dt><dd>Boolean - according to queue emptiness </dd></dl>
 
 </div>
 </div>
@@ -267,7 +263,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove first client from clientQueue and returns it </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classClient.html">Client</a> </dd></dl>
+<p>Remove first client from clientQueue and return it </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classClient.html">Client</a> </dd></dl>
 
 </div>
 </div>

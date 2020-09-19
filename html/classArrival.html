@@ -72,6 +72,7 @@ Inheritance diagram for Arrival:</div>
 <div class="dyncontent">
 <div class="center"><img src="classArrival__inherit__graph.png" border="0" usemap="#Arrival_inherit__map" alt="Inheritance graph"/></div>
 <map name="Arrival_inherit__map" id="Arrival_inherit__map">
+<area shape="rect" id="node2" href="classEvent.html" title="Event" alt="" coords="7,5,63,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -79,6 +80,7 @@ Collaboration diagram for Arrival:</div>
 <div class="dyncontent">
 <div class="center"><img src="classArrival__coll__graph.png" border="0" usemap="#Arrival_coll__map" alt="Collaboration graph"/></div>
 <map name="Arrival_coll__map" id="Arrival_coll__map">
+<area shape="rect" id="node2" href="classEvent.html" title="Event" alt="" coords="7,5,63,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -99,10 +101,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab05b23f7cc8d126efcbf189062f3b275 inherit pub_methods_classEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classArrival.html">Arrival</a> class, inheriting from <a class="el" href="classEvent.html">Event</a> class. Representing the arrival of a client in the bank. Given private attributes are :</p><ul>
-<li>cashier : A Cashier-pointer attribute, indicating the cashier related to an <a class="el" href="classArrival.html">Arrival</a> event.</li>
-<li>client : A Client-pointer attribute, indicating the client that just arrived in the bank.</li>
-<li>simulation : A Simulation-pointer attribute, for easy access </li>
+<div class="textblock"><p><a class="el" href="classArrival.html">Arrival</a> class, inheriting from <a class="el" href="classEvent.html">Event</a> class. Given private attributes are :</p><ul>
+<li>cashier <a class="el" href="classCashier.html">Cashier</a> - the cashier related to the <a class="el" href="classArrival.html">Arrival</a> event</li>
+<li>client <a class="el" href="classClient.html">Client</a> - the client who has just arrived in the bank</li>
+<li>simulation <a class="el" href="classSimulation.html">Simulation</a> - an access to the <a class="el" href="classSimulation.html">Simulation</a> object </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a996941f87624cdbe25ffdaf87672a34f"></a>
@@ -132,8 +134,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classArrival.html">Arrival</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">time</td><td>Double parameter representing the <a class="el" href="classArrival.html">Arrival</a> time (of a <a class="el" href="classClient.html">Client</a>) </td></tr>
-    <tr><td class="paramname">simulation</td><td><a class="el" href="classSimulation.html">Simulation</a> reference parameter to keep track of the current <a class="el" href="classSimulation.html">Simulation</a> object </td></tr>
+    <tr><td class="paramname">time</td><td>Double - the arrival time of the client </td></tr>
+    <tr><td class="paramname">simulation</td><td><a class="el" href="classSimulation.html">Simulation</a> - reference parameter to access simulation data from bank </td></tr>
   </table>
   </dd>
 </dl>
@@ -157,7 +159,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="classArrival.html">Arrival</a> Copy-Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arrival</td><td>Arrival-class reference parameter </td></tr>
+    <tr><td class="paramname">arrival</td><td><a class="el" href="classArrival.html">Arrival</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -187,7 +189,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Launch <a class="el" href="classArrival.html">Arrival</a>'s process. A new client is created. If a or several <a class="el" href="classCashier.html">Cashier</a> are available, the newly created client is attributed to the first available <a class="el" href="classCashier.html">Cashier</a>. Else, the client goes in the <a class="el" href="classQueue.html">Queue</a>. A new <a class="el" href="classArrival.html">Arrival</a> <a class="el" href="classEvent.html">Event</a> is created during the process. </p>
+<p>Launch <a class="el" href="classArrival.html">Arrival</a>'s process. A new client is created. If a or several <a class="el" href="classCashier.html">Cashier</a> are available, the newly created client is attributed to the first available <a class="el" href="classCashier.html">Cashier</a>. Else, the client goes in the <a class="el" href="classQueue.html">Queue</a>. A new <a class="el" href="classArrival.html">Arrival</a> event is created during the process. </p>
 
 <p>Implements <a class="el" href="classEvent.html#af1940e82c4da67c8119f0dfe026949b4">Event</a>.</p>
 

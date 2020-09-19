@@ -71,7 +71,9 @@ $(function() {
 Inheritance diagram for DiscreteEventSimulation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDiscreteEventSimulation__inherit__graph.png" border="0" usemap="#DiscreteEventSimulation_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="DiscreteEventSimulation_inherit__map" id="DiscreteEventSimulation_inherit__map">
+<area shape="rect" id="node2" href="classSimulation.html" title="Simulation" alt="" coords="47,80,130,107"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -88,10 +90,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aae616e227950798dc958171210975713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> class, obviously representing it's purpose. Three given private attributes are :</p><ul>
-<li>currentTime : double attribute which is keeping the current time of the <a class="el" href="classSimulation.html">Simulation</a>. It is everchanging when simulation is running.</li>
-<li>startTime : double attribute indicating the start time of the <a class="el" href="classSimulation.html">Simulation</a>.</li>
-<li>eventQueue ! priority_queue&lt;Event*, vector&lt;Event*&gt;, <a class="el" href="classCompareEventPriority.html">CompareEventPriority</a>&gt; attribute. Events being or going to be processed are kept there. </li>
+<div class="textblock"><p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> class. Given private attributes are :</p><ul>
+<li>currentTime Double - the current time of the simulation</li>
+<li>startTime Double - the start time of the simulation</li>
+<li>eventQueue priority_queue&lt;Event*, vector&lt;Event*&gt;, <a class="el" href="classCompareEventPriority.html">CompareEventPriority</a>&gt; - <a class="el" href="classQueue.html">Queue</a> of all simulation's events to be processed </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afef7ef964c3a7d151150120184c58d99"></a>
@@ -117,9 +119,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">startTime</td><td>Start time of the simulation </td></tr>
+    <tr><td class="paramname">startTime</td><td>Double - start time of the simulation </td></tr>
   </table>
   </dd>
 </dl>
@@ -141,9 +143,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> Copy-Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> Copy-Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">discreteEventSimulation</td><td></td></tr>
+    <tr><td class="paramname">discreteEventSimulation</td><td><a class="el" href="classDiscreteEventSimulation.html">DiscreteEventSimulation</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -166,9 +168,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add the given event to eventQueue. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Add the given event to eventQueue </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td><a class="el" href="classEvent.html">Event</a> to be added. Can be a <a class="el" href="classDeparture.html">Departure</a> or <a class="el" href="classArrival.html">Arrival</a>, or any class implementing <a class="el" href="classEvent.html">Event</a>. </td></tr>
+    <tr><td class="paramname">event</td><td><a class="el" href="classEvent.html">Event</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -189,7 +191,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get current time. </p><dl class="section return"><dt>Returns</dt><dd>currentTime as a double value </dd></dl>
+<p>Get current time </p><dl class="section return"><dt>Returns</dt><dd>currentTime Double </dd></dl>
 
 </div>
 </div>
@@ -207,7 +209,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Launch simulation. </p>
+<p>Launch simulation </p>
 
 </div>
 </div>

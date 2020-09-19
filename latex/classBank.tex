@@ -28,13 +28,13 @@ void \hyperlink{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}{add\+Client\+To\+Co
 
 
 \subsection{Detailed Description}
-\hyperlink{classBank}{Bank} class. Some private attributes are given to represent a real life bank such as \+:
+\hyperlink{classBank}{Bank} class. Given private attributes are \+:
 \begin{DoxyItemize}
-\item The number of cashiers
-\item The total number of clients that came in the bank
-\item An array of cashiers existing in the bank
-\item A queue for the customers / clients
-\item An access to the \hyperlink{classSimulation}{Simulation} object 
+\item cashiers\+Count Int -\/ the number of cashiers
+\item clients\+Count Int -\/ the total number of clients who came in the bank
+\item cashiers \hyperlink{classCashier}{Cashier}\mbox{[}\mbox{]} -\/ an array of cashiers existing in the bank
+\item queue \hyperlink{classQueue}{Queue} -\/ the clients\textquotesingle{} queue
+\item simulation \hyperlink{classSimulation}{Simulation} -\/ an access to the \hyperlink{classSimulation}{Simulation} object 
 \end{DoxyItemize}
 
 \subsection{Constructor \& Destructor Documentation}
@@ -46,11 +46,11 @@ void \hyperlink{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}{add\+Client\+To\+Co
 
 \hyperlink{classBank}{Bank} Constructor 
 \begin{DoxyParams}{Parameters}
-{\em average\+Service\+Times} & Average Service times for each cashier during the \hyperlink{classSimulation}{Simulation} \\
+{\em average\+Service\+Times} & Double -\/ average Service time for each cashier during the \hyperlink{classSimulation}{Simulation} \\
 \hline
-{\em cashiers\+Count} & Number of \hyperlink{classCashier}{Cashier} class objects during the simulation \\
+{\em cashiers\+Count} & Int -\/ number of \hyperlink{classCashier}{Cashier} class objects during the simulation \\
 \hline
-{\em simulation} & \hyperlink{classSimulation}{Simulation} reference parameter to access simulation data from bank \\
+{\em simulation} & \hyperlink{classSimulation}{Simulation} -\/ reference parameter to access simulation data from bank \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classBank_affa9032a547e660fa64b773fee47f612}\label{classBank_affa9032a547e660fa64b773fee47f612}} 
@@ -61,7 +61,7 @@ void \hyperlink{classBank_a2fe9f47aabc4fe73adc07af460f30dcc}{add\+Client\+To\+Co
 
 \hyperlink{classBank}{Bank} Copy-\/\+Constructor 
 \begin{DoxyParams}{Parameters}
-{\em bank} & \hyperlink{classBank}{Bank} reference parameter \\
+{\em bank} & \hyperlink{classBank}{Bank} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classBank_a86eb33b90cf9dbf0a528155c5bfde004}\label{classBank_a86eb33b90cf9dbf0a528155c5bfde004}} 
@@ -87,11 +87,11 @@ Add a client to the clients\+Count attribute by increment \mbox{\Hypertarget{cla
 
 Get the cashier at given index in cashiers attribute 
 \begin{DoxyParams}{Parameters}
-{\em index} & \\
+{\em index} & Int \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-cashier 
+\hyperlink{classCashier}{Cashier} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classBank_a46e579a690e0d3ca175923fcbae30a2d}\label{classBank_a46e579a690e0d3ca175923fcbae30a2d}} 
 \index{Bank@{Bank}!get\+Clients\+Count@{get\+Clients\+Count}}
@@ -100,7 +100,7 @@ cashier
 {\footnotesize\ttfamily int Bank\+::get\+Clients\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Get clients count \begin{DoxyReturn}{Returns}
-clients\+Count as an Integer return value 
+clients\+Count Int 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classBank_a406e1fc9b050ed4559760c5a52fe81e4}\label{classBank_a406e1fc9b050ed4559760c5a52fe81e4}} 
 \index{Bank@{Bank}!get\+First\+Available\+Cashier@{get\+First\+Available\+Cashier}}
@@ -109,7 +109,7 @@ clients\+Count as an Integer return value
 {\footnotesize\ttfamily \hyperlink{classCashier}{Cashier} $\ast$ Bank\+::get\+First\+Available\+Cashier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Get the first (from 0 to cashiers\+Count) available cashier \begin{DoxyReturn}{Returns}
-A cashier object if available or null 
+Cashier$\vert$nullptr 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classBank_a79644f520ee9fafdfa1ffa303b84bb4a}\label{classBank_a79644f520ee9fafdfa1ffa303b84bb4a}} 
 \index{Bank@{Bank}!get\+Queue@{get\+Queue}}
@@ -118,7 +118,7 @@ A cashier object if available or null
 {\footnotesize\ttfamily \hyperlink{classQueue}{Queue} \& Bank\+::get\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Get \hyperlink{classQueue}{Queue} attribute \begin{DoxyReturn}{Returns}
-queue as a reference \hyperlink{classQueue}{Queue} return value 
+\hyperlink{classQueue}{Queue} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classBank_a8d181c1cfdea6b987602f9e2954cb7ad}\label{classBank_a8d181c1cfdea6b987602f9e2954cb7ad}} 
 \index{Bank@{Bank}!get\+Simulation@{get\+Simulation}}
@@ -127,7 +127,7 @@ queue as a reference \hyperlink{classQueue}{Queue} return value
 {\footnotesize\ttfamily \hyperlink{classSimulation}{Simulation} \& Bank\+::get\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Get \hyperlink{classSimulation}{Simulation} attribute \begin{DoxyReturn}{Returns}
-simulation as a reference \hyperlink{classSimulation}{Simulation} return value 
+\hyperlink{classSimulation}{Simulation} 
 \end{DoxyReturn}
 
 

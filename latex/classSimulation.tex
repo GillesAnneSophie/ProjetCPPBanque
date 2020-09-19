@@ -2,12 +2,26 @@
 \label{classSimulation}\index{Simulation@{Simulation}}
 
 
-Inheritance diagram for Simulation\+:
-% FIG 0
+{\ttfamily \#include $<$Simulation.\+h$>$}
 
 
-Collaboration diagram for Simulation\+:
-% FIG 1
+
+Inheritance diagram for Simulation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classSimulation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Simulation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classSimulation__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,6 +47,15 @@ bool {\bfseries D\+E\+B\+UG} = false
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\hyperlink{classSimulation}{Simulation} class. Given private attributes are \+:
+\begin{DoxyItemize}
+\item planned\+Duration Double -\/ planned duration for the simulation
+\item real\+Duration Double -\/ real duration at the end of the simulation
+\item average\+Arrival\+Time Double -\/ average arrival time wanted for the simulation
+\item bank bank -\/ an access to the \hyperlink{classBank}{Bank} object 
+\end{DoxyItemize}
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSimulation_a4709539e1e5ef724442ba1484d4a9ab8}\label{classSimulation_a4709539e1e5ef724442ba1484d4a9ab8}} 
 \index{Simulation@{Simulation}!Simulation@{Simulation}}
@@ -42,13 +65,13 @@ bool {\bfseries D\+E\+B\+UG} = false
 
 \hyperlink{classSimulation}{Simulation} Constructor 
 \begin{DoxyParams}{Parameters}
-{\em planned\+Duration} & Planned Duration for the simulation \\
+{\em planned\+Duration} & Double -\/ planned duration for the simulation \\
 \hline
-{\em average\+Arrival\+Time} & Average arrival time wanted for the simulation \\
+{\em average\+Arrival\+Time} & Double -\/ average arrival time wanted for the simulation \\
 \hline
-{\em average\+Service\+Times} & Average service time wanted for the cashier \\
+{\em average\+Service\+Times} & Double\mbox{[}\mbox{]} -\/ average service times wanted for the cashiers \\
 \hline
-{\em cashiers\+Count} & Wanted number of cashiers for the bank \\
+{\em cashiers\+Count} & Int -\/ wanted number of cashiers for the bank \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classSimulation_ad82aba6067f881a5c364ea6b6b317325}\label{classSimulation_ad82aba6067f881a5c364ea6b6b317325}} 
@@ -59,7 +82,7 @@ bool {\bfseries D\+E\+B\+UG} = false
 
 \hyperlink{classSimulation}{Simulation} Copy-\/\+Constructor 
 \begin{DoxyParams}{Parameters}
-{\em simulation} & \\
+{\em simulation} & \hyperlink{classSimulation}{Simulation} \\
 \hline
 \end{DoxyParams}
 
@@ -71,8 +94,8 @@ bool {\bfseries D\+E\+B\+UG} = false
 \subsubsection{\texorpdfstring{get\+Average\+Arrival\+Time()}{getAverageArrivalTime()}}
 {\footnotesize\ttfamily double Simulation\+::get\+Average\+Arrival\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get average arrival time. \begin{DoxyReturn}{Returns}
-average\+Arrival\+Time as a double value 
+Get average arrival time \begin{DoxyReturn}{Returns}
+average\+Arrival\+Time Double 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSimulation_a280ef124f9f6395a446b36a9dd45e4bc}\label{classSimulation_a280ef124f9f6395a446b36a9dd45e4bc}} 
 \index{Simulation@{Simulation}!get\+Bank@{get\+Bank}}
@@ -80,8 +103,8 @@ average\+Arrival\+Time as a double value
 \subsubsection{\texorpdfstring{get\+Bank()}{getBank()}}
 {\footnotesize\ttfamily \hyperlink{classBank}{Bank} \& Simulation\+::get\+Bank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get bank. \begin{DoxyReturn}{Returns}
-bank 
+Get bank \begin{DoxyReturn}{Returns}
+\hyperlink{classBank}{Bank} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSimulation_a242c58ccefca3705bdc47ee7827c24fe}\label{classSimulation_a242c58ccefca3705bdc47ee7827c24fe}} 
 \index{Simulation@{Simulation}!get\+Planned\+Duration@{get\+Planned\+Duration}}
@@ -89,8 +112,8 @@ bank
 \subsubsection{\texorpdfstring{get\+Planned\+Duration()}{getPlannedDuration()}}
 {\footnotesize\ttfamily double Simulation\+::get\+Planned\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get simulation\textquotesingle{}s planned duration. \begin{DoxyReturn}{Returns}
-planned\+Duration as a double value 
+Get simulation\textquotesingle{}s planned duration \begin{DoxyReturn}{Returns}
+planned\+Duration Double 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSimulation_a18218154310af27c087def0936690346}\label{classSimulation_a18218154310af27c087def0936690346}} 
 \index{Simulation@{Simulation}!get\+Real\+Duration@{get\+Real\+Duration}}
@@ -99,7 +122,7 @@ planned\+Duration as a double value
 {\footnotesize\ttfamily double Simulation\+::get\+Real\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Get simulation\textquotesingle{}s real duration \begin{DoxyReturn}{Returns}
-real\+Duration 
+real\+Duration Double 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSimulation_af7d8147539e8ea62f83c44fa0431e27d}\label{classSimulation_af7d8147539e8ea62f83c44fa0431e27d}} 
 \index{Simulation@{Simulation}!set\+Real\+Duration@{set\+Real\+Duration}}
@@ -109,7 +132,7 @@ real\+Duration
 
 Set simulation\textquotesingle{}s real duration 
 \begin{DoxyParams}{Parameters}
-{\em real\+Duration} & \\
+{\em real\+Duration} & Double \\
 \hline
 \end{DoxyParams}
 

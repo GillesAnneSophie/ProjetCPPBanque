@@ -86,18 +86,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac04b7595d1d7e51dd673590809cb5682"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60d8270fa27302302b80a810c53a8f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBank.html">Bank</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCashier.html#aa60d8270fa27302302b80a810c53a8f9">getBank</a> ()</td></tr>
 <tr class="separator:aa60d8270fa27302302b80a810c53a8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a571d08400e1d738163252caa61cbd165"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCashier.html#a571d08400e1d738163252caa61cbd165">addOccupiedTime</a> (double time)</td></tr>
-<tr class="separator:a571d08400e1d738163252caa61cbd165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1123f41f1643d9cce2e502243b2aa5b3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCashier.html#a1123f41f1643d9cce2e502243b2aa5b3">getOccupiedTime</a> ()</td></tr>
 <tr class="separator:a1123f41f1643d9cce2e502243b2aa5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Object representing a <a class="el" href="classCashier.html">Cashier</a>. Given private parameters are :</p><ul>
-<li>averageServiceTime : A double variable for the average service time, that should be configured with the <a class="el" href="classSimulation.html">Simulation</a> class</li>
-<li>clientsCount : An integer representing the number of clients served by the cashier</li>
-<li>bank : A pointer on a <a class="el" href="classBank.html">Bank</a> object for easy access</li>
-<li>available : A boolean variable to indicate the occupancy of the cashier</li>
-<li>occupiedTime : A double variable totalling the amount time the cashier was occupied during the simulation </li>
+<div class="textblock"><p><a class="el" href="classCashier.html">Cashier</a> class. Given private attributes are :</p><ul>
+<li>averageServiceTime Double - the average service time of the cashier</li>
+<li>clientsCount Int - the number of clients served by the cashier</li>
+<li>bank <a class="el" href="classBank.html">Bank</a> - an access to the <a class="el" href="classBank.html">Bank</a> object</li>
+<li>available Boolean - the cashier's availability</li>
+<li>occupiedTime Double - the total amount of occupied time of the cashier during the simulation </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1616d49e92657698805bb9672df8c019"></a>
@@ -125,10 +123,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classCashier.html">Cashier</a> Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="classCashier.html">Cashier</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">averageServiceTime</td><td>The average service time of the cashier. </td></tr>
-    <tr><td class="paramname">bank</td><td>The bank in which the cashier is part of. </td></tr>
+    <tr><td class="paramname">averageServiceTime</td><td>Double - the average service time of the cashier </td></tr>
+    <tr><td class="paramname">bank</td><td><a class="el" href="classBank.html">Bank</a> - the bank in which the cashier is part of </td></tr>
   </table>
   </dd>
 </dl>
@@ -150,9 +148,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classCashier.html">Cashier</a> Copy-Constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="classCashier.html">Cashier</a> Copy-Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cashier</td><td></td></tr>
+    <tr><td class="paramname">cashier</td><td><a class="el" href="classCashier.html">Cashier</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -160,30 +158,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a571d08400e1d738163252caa61cbd165"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a571d08400e1d738163252caa61cbd165">&#9670;&nbsp;</a></span>addOccupiedTime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Cashier::addOccupiedTime </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Add given occupied time to occupiedTime attribute. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">time</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ac04b7595d1d7e51dd673590809cb5682"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac04b7595d1d7e51dd673590809cb5682">&#9670;&nbsp;</a></span>free()</h2>
 
@@ -216,7 +190,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get bank attribute. </p><dl class="section return"><dt>Returns</dt><dd>bank reference. </dd></dl>
+<p>Get bank attribute </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classBank.html">Bank</a> </dd></dl>
 
 </div>
 </div>
@@ -234,7 +208,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get clients count. </p><dl class="section return"><dt>Returns</dt><dd>clientsCount as an Integer value. </dd></dl>
+<p>Get clients count </p><dl class="section return"><dt>Returns</dt><dd>clientsCount Int </dd></dl>
 
 </div>
 </div>
@@ -252,7 +226,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get occupation rate. The rate is calculated by using the formula : (occupiedTime*100.00)/ realDuration. Result is given in percentage. </p><dl class="section return"><dt>Returns</dt><dd>occupationRate as a double value. </dd></dl>
+<p>Get occupation rate. The rate is calculated by using the formula : (occupiedTime*100.00)/realDuration. Result is given in percentages </p><dl class="section return"><dt>Returns</dt><dd>occupationRate Double </dd></dl>
 
 </div>
 </div>
@@ -270,7 +244,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get occupied time attribute. </p><dl class="section return"><dt>Returns</dt><dd>occupiedTime as double value. </dd></dl>
+<p>Get occupied time attribute </p><dl class="section return"><dt>Returns</dt><dd>occupiedTime Double </dd></dl>
 
 </div>
 </div>
@@ -288,11 +262,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get available attribute. </p><dl class="section return"><dt>Returns</dt><dd>available as a boolean value.<ul>
-<li>Returns true if cashier isn't occupied</li>
-<li>Return false if occupied </li>
-</ul>
-</dd></dl>
+<p>Get available attribute </p><dl class="section return"><dt>Returns</dt><dd>Boolean - according to cashier's availability </dd></dl>
 
 </div>
 </div>
@@ -311,9 +281,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Serve the given client. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Serve the given client </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>A <a class="el" href="classClient.html">Client</a> object. </td></tr>
+    <tr><td class="paramname">client</td><td><a class="el" href="classClient.html">Client</a> </td></tr>
   </table>
   </dd>
 </dl>

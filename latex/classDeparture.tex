@@ -6,12 +6,22 @@
 
 
 
-Inheritance diagram for Departure\+:
-% FIG 0
+Inheritance diagram for Departure\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classDeparture__inherit__graph}
+\end{center}
+\end{figure}
 
 
-Collaboration diagram for Departure\+:
-% FIG 1
+Collaboration diagram for Departure\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classDeparture__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,10 +34,10 @@ void \hyperlink{classDeparture_a241611bdf4255d2ba868d58128dddc68}{process} () ov
 
 
 \subsection{Detailed Description}
-\hyperlink{classDeparture}{Departure} class, inheriting from \hyperlink{classEvent}{Event} class. Representing the departure of a client from the bank. Given private attributes are \+:
+\hyperlink{classDeparture}{Departure} class, inheriting from \hyperlink{classEvent}{Event} class. Given private attributes are \+:
 \begin{DoxyItemize}
-\item cashier \+: A Cashier-\/pointer attribute, indicating the cashier that finished serving the client.
-\item client \+: A Client-\/pointer attribute, indicating the client that is going to depart from the bank. 
+\item cashier \hyperlink{classCashier}{Cashier} -\/ the cashier related to the \hyperlink{classDeparture}{Departure} event
+\item client \hyperlink{classClient}{Client} -\/ the client who has just arrived in the bank 
 \end{DoxyItemize}
 
 \subsection{Constructor \& Destructor Documentation}
@@ -37,13 +47,13 @@ void \hyperlink{classDeparture_a241611bdf4255d2ba868d58128dddc68}{process} () ov
 \subsubsection{\texorpdfstring{Departure()}{Departure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Departure\+::\+Departure (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{\hyperlink{classClient}{Client} \&}]{client,  }\item[{\hyperlink{classCashier}{Cashier} \&}]{cashier }\end{DoxyParamCaption})}
 
-\hyperlink{classDeparture}{Departure} Constructor. 
+\hyperlink{classDeparture}{Departure} Constructor 
 \begin{DoxyParams}{Parameters}
-{\em time} & \hyperlink{classDeparture}{Departure} time \\
+{\em time} & Double -\/ the arrival time of the client \\
 \hline
-{\em client} & Departing client \\
+{\em client} & \hyperlink{classClient}{Client} -\/ the client who is leaving the bank \\
 \hline
-{\em cashier} & \hyperlink{classCashier}{Cashier} that served the client and which is going to be available \\
+{\em cashier} & \hyperlink{classCashier}{Cashier} -\/ the cashier who served the client \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classDeparture_ade976c4ac1c737eded923e7e2adbf3f0}\label{classDeparture_ade976c4ac1c737eded923e7e2adbf3f0}} 
@@ -52,9 +62,9 @@ void \hyperlink{classDeparture_a241611bdf4255d2ba868d58128dddc68}{process} () ov
 \subsubsection{\texorpdfstring{Departure()}{Departure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Departure\+::\+Departure (\begin{DoxyParamCaption}\item[{const \hyperlink{classDeparture}{Departure} \&}]{departure }\end{DoxyParamCaption})}
 
-\hyperlink{classDeparture}{Departure} Copy-\/\+Constructor. 
+\hyperlink{classDeparture}{Departure} Copy-\/\+Constructor 
 \begin{DoxyParams}{Parameters}
-{\em departure} & \\
+{\em departure} & \hyperlink{classDeparture}{Departure} \\
 \hline
 \end{DoxyParams}
 
@@ -66,7 +76,7 @@ void \hyperlink{classDeparture_a241611bdf4255d2ba868d58128dddc68}{process} () ov
 \subsubsection{\texorpdfstring{process()}{process()}}
 {\footnotesize\ttfamily void Departure\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Launch \hyperlink{classDeparture}{Departure}\textquotesingle{}s process. The cashier associated with the departure is going to be enabled, while the client while by destroyed. 
+Launch \hyperlink{classDeparture}{Departure}\textquotesingle{}s process. The cashier associated with the departure is going to be available, while the client will be destroyed. 
 
 Implements \hyperlink{classEvent_af1940e82c4da67c8119f0dfe026949b4}{Event}.
 

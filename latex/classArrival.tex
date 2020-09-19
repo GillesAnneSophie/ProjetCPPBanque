@@ -6,4 +6,82 @@
 
 
 
-Inheritance diagram for Arrival\+:
+Inheritance diagram for Arrival\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classArrival__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arrival\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classArrival__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classArrival_a996941f87624cdbe25ffdaf87672a34f}{Arrival} (double time, \hyperlink{classSimulation}{Simulation} \&simulation)
+\item 
+\hyperlink{classArrival_a4c92db3a71a26cd86c33323faee828f7}{Arrival} (const \hyperlink{classArrival}{Arrival} \&arrival)
+\item 
+void \hyperlink{classArrival_ad7da9fd4613164ece60d63be1bac6f1d}{process} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classArrival}{Arrival} class, inheriting from \hyperlink{classEvent}{Event} class. Given private attributes are \+:
+\begin{DoxyItemize}
+\item cashier \hyperlink{classCashier}{Cashier} -\/ the cashier related to the \hyperlink{classArrival}{Arrival} event
+\item client \hyperlink{classClient}{Client} -\/ the client who has just arrived in the bank
+\item simulation \hyperlink{classSimulation}{Simulation} -\/ an access to the \hyperlink{classSimulation}{Simulation} object 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArrival_a996941f87624cdbe25ffdaf87672a34f}\label{classArrival_a996941f87624cdbe25ffdaf87672a34f}} 
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\subsubsection{\texorpdfstring{Arrival()}{Arrival()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arrival\+::\+Arrival (\begin{DoxyParamCaption}\item[{double}]{time,  }\item[{\hyperlink{classSimulation}{Simulation} \&}]{simulation }\end{DoxyParamCaption})}
+
+\hyperlink{classArrival}{Arrival} Constructor 
+\begin{DoxyParams}{Parameters}
+{\em time} & Double -\/ the arrival time of the client \\
+\hline
+{\em simulation} & \hyperlink{classSimulation}{Simulation} -\/ reference parameter to access simulation data from bank \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArrival_a4c92db3a71a26cd86c33323faee828f7}\label{classArrival_a4c92db3a71a26cd86c33323faee828f7}} 
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\index{Arrival@{Arrival}!Arrival@{Arrival}}
+\subsubsection{\texorpdfstring{Arrival()}{Arrival()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arrival\+::\+Arrival (\begin{DoxyParamCaption}\item[{const \hyperlink{classArrival}{Arrival} \&}]{arrival }\end{DoxyParamCaption})}
+
+\hyperlink{classArrival}{Arrival} Copy-\/\+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em arrival} & \hyperlink{classArrival}{Arrival} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classArrival_ad7da9fd4613164ece60d63be1bac6f1d}\label{classArrival_ad7da9fd4613164ece60d63be1bac6f1d}} 
+\index{Arrival@{Arrival}!process@{process}}
+\index{process@{process}!Arrival@{Arrival}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Arrival\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Launch \hyperlink{classArrival}{Arrival}\textquotesingle{}s process. A new client is created. If a or several \hyperlink{classCashier}{Cashier} are available, the newly created client is attributed to the first available \hyperlink{classCashier}{Cashier}. Else, the client goes in the \hyperlink{classQueue}{Queue}. A new \hyperlink{classArrival}{Arrival} event is created during the process. 
+
+Implements \hyperlink{classEvent_af1940e82c4da67c8119f0dfe026949b4}{Event}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arrival.\+h\item 
+Arrival.\+cpp\end{DoxyCompactItemize}

@@ -66,17 +66,23 @@ $(function() {
 <div class="title">Simulation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Simulation_8h_source.html">Simulation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Simulation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulation__inherit__graph.png" border="0" usemap="#Simulation_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="Simulation_inherit__map" id="Simulation_inherit__map">
+<area shape="rect" id="node2" href="classDiscreteEventSimulation.html" title="DiscreteEventSimulation" alt="" coords="5,5,172,32"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Simulation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulation__coll__graph.png" border="0" usemap="#Simulation_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="Simulation_coll__map" id="Simulation_coll__map">
+<area shape="rect" id="node2" href="classDiscreteEventSimulation.html" title="DiscreteEventSimulation" alt="" coords="5,5,172,32"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -113,7 +119,14 @@ Public Attributes</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td></tr>
 <tr class="separator:ae125e30e669048458632583d63c6683e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classSimulation.html">Simulation</a> class. Given private attributes are :</p><ul>
+<li>plannedDuration Double - planned duration for the simulation</li>
+<li>realDuration Double - real duration at the end of the simulation</li>
+<li>averageArrivalTime Double - average arrival time wanted for the simulation</li>
+<li>bank bank - an access to the <a class="el" href="classBank.html">Bank</a> object </li>
+</ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4709539e1e5ef724442ba1484d4a9ab8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4709539e1e5ef724442ba1484d4a9ab8">&#9670;&nbsp;</a></span>Simulation() <span class="overload">[1/2]</span></h2>
 
@@ -153,10 +166,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
 </div><div class="memdoc">
 <p><a class="el" href="classSimulation.html">Simulation</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">plannedDuration</td><td>Planned Duration for the simulation </td></tr>
-    <tr><td class="paramname">averageArrivalTime</td><td>Average arrival time wanted for the simulation </td></tr>
-    <tr><td class="paramname">averageServiceTimes</td><td>Average service time wanted for the cashier </td></tr>
-    <tr><td class="paramname">cashiersCount</td><td>Wanted number of cashiers for the bank </td></tr>
+    <tr><td class="paramname">plannedDuration</td><td>Double - planned duration for the simulation </td></tr>
+    <tr><td class="paramname">averageArrivalTime</td><td>Double - average arrival time wanted for the simulation </td></tr>
+    <tr><td class="paramname">averageServiceTimes</td><td>Double[] - average service times wanted for the cashiers </td></tr>
+    <tr><td class="paramname">cashiersCount</td><td>Int - wanted number of cashiers for the bank </td></tr>
   </table>
   </dd>
 </dl>
@@ -180,7 +193,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
 </div><div class="memdoc">
 <p><a class="el" href="classSimulation.html">Simulation</a> Copy-Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">simulation</td><td></td></tr>
+    <tr><td class="paramname">simulation</td><td><a class="el" href="classSimulation.html">Simulation</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,7 +215,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get average arrival time. </p><dl class="section return"><dt>Returns</dt><dd>averageArrivalTime as a double value </dd></dl>
+<p>Get average arrival time </p><dl class="section return"><dt>Returns</dt><dd>averageArrivalTime Double </dd></dl>
 
 </div>
 </div>
@@ -220,7 +233,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get bank. </p><dl class="section return"><dt>Returns</dt><dd>bank </dd></dl>
+<p>Get bank </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classBank.html">Bank</a> </dd></dl>
 
 </div>
 </div>
@@ -238,7 +251,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get simulation's planned duration. </p><dl class="section return"><dt>Returns</dt><dd>plannedDuration as a double value </dd></dl>
+<p>Get simulation's planned duration </p><dl class="section return"><dt>Returns</dt><dd>plannedDuration Double </dd></dl>
 
 </div>
 </div>
@@ -256,7 +269,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get simulation's real duration </p><dl class="section return"><dt>Returns</dt><dd>realDuration </dd></dl>
+<p>Get simulation's real duration </p><dl class="section return"><dt>Returns</dt><dd>realDuration Double </dd></dl>
 
 </div>
 </div>
@@ -277,7 +290,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b> = false</td
 </div><div class="memdoc">
 <p>Set simulation's real duration </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">realDuration</td><td></td></tr>
+    <tr><td class="paramname">realDuration</td><td>Double </td></tr>
   </table>
   </dd>
 </dl>
